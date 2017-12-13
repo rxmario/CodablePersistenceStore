@@ -1,0 +1,6 @@
+framework module CodablePersistenceStore {
+  umbrella header "CodablePersistenceStore-umbrella.h"
+
+  export *
+  module * { export * }
+}

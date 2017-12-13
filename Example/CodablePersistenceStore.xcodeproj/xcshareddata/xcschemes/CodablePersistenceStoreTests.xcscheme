@@ -5,36 +5,6 @@
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
-      <BuildActionEntries>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-               BuildableName = "CodablePersistenceStore_Example.app"
-               BlueprintName = "CodablePersistenceStore_Example"
-               ReferencedContainer = "container:CodablePersistenceStore.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607FACE41AFB9204008FA782"
-               BuildableName = "CodablePersistenceStore_Tests.xctest"
-               BlueprintName = "CodablePersistenceStore_Tests"
-               ReferencedContainer = "container:CodablePersistenceStore.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-      </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
@@ -51,6 +21,16 @@
                BlueprintIdentifier = "6BE0B47E1FBEC92C00C0AE35"
                BuildableName = "CodablePersistenceStoreTests.xctest"
                BlueprintName = "CodablePersistenceStoreTests"
+               ReferencedContainer = "container:CodablePersistenceStore.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "6B8F23DA1FBEDB0500050453"
+               BuildableName = "CodablePersistenceStore_Tests.xctest"
+               BlueprintName = "CodablePersistenceStore_Tests"
                ReferencedContainer = "container:CodablePersistenceStore.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -97,8 +77,7 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
@@ -106,7 +85,7 @@
             BlueprintName = "CodablePersistenceStore_Example"
             ReferencedContainer = "container:CodablePersistenceStore.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

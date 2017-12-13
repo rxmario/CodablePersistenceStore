@@ -3,7 +3,8 @@ use_frameworks!
 target 'CodablePersistenceStore_Example' do
   pod 'CodablePersistenceStore', :path => '../'
 
-  target 'CodablePersistenceStore_Tests' do
+  target 'CodablePersistenceStoreTests' do
+      pod 'CodablePersistenceStore', :path => '../'
     inherit! :search_paths
 
     

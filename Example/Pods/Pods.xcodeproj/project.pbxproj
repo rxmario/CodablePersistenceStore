@@ -1,0 +1,999 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		12C489008F72139E5DA9D23D33890256 /* Pods-CodablePersistenceStore_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C57AB49DF9D313F1021976C900C5A7 /* Pods-CodablePersistenceStore_Example-dummy.m */; };
+		14FEF585D76BB97CD6346E2A2F248D01 /* Disk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0057F5042E1F63E0EBA82609AE403E31 /* Disk.swift */; };
+		15E605CC6CEF01BCC8C70EF3CB48ADD4 /* CodablePersistenceStoreErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFD1B78DAB4C6D3ED621206575E9D2D /* CodablePersistenceStoreErrors.swift */; };
+		1717AA0112E384D22C695184211D1BD9 /* Disk+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6021E80C8470F0C4E28225CF9D82CE /* Disk+Codable.swift */; };
+		250E4C3F218DFAE138D32B7F38840360 /* CodablePersistenceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134344506FDEF7051A1678AB4EDB98A4 /* CodablePersistenceStore.swift */; };
+		2586B05B52D44DE6DDF3F2C4C466AD80 /* Pods-CodablePersistenceStore_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7640DEB650BE95DC7DE36AEFFD00D8A8 /* Pods-CodablePersistenceStore_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2BA9B0E25E8E4CB05CDD31C3CDC14BDA /* Disk+VolumeInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF1A0A945FCD494A4A91F29D8682A23 /* Disk+VolumeInformation.swift */; };
+		35D30646D57F37FF5E122A42D6AAEFD2 /* Disk+[UIImage].swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8F5B08062179972F8DB524192688A9 /* Disk+[UIImage].swift */; };
+		39CDB8568203D619EB56B4DFC27A7B6F /* Disk-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 626525D4A308B00FFC018D67F592A5F3 /* Disk-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4F8EE79D588510949C767BCBDB101024 /* Disk+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DC7A16BD513E6FE9F239B28A0B3BD6 /* Disk+Data.swift */; };
+		5744363B57B485BA13CAB01231611E87 /* Disk+Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D567112740D1C7E99558C0A87982AAA /* Disk+Errors.swift */; };
+		5A22E9B6DC567D2C141C0F39611E2670 /* Disk+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FECCBB0736A70E18322C705748CFC43 /* Disk+Helpers.swift */; };
+		6374424E5452445DCBD3F49133ECCEF9 /* Pods-CodablePersistenceStoreTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3131E560B487B15E9076375589998B80 /* Pods-CodablePersistenceStoreTests-dummy.m */; };
+		64691592B2DE73911DA265DC20B78B59 /* Disk+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4A6E13B96B74E004FD045E2334942E /* Disk+UIImage.swift */; };
+		6865B44EECB143A14CE69922AC76E255 /* CanBeIdentified.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED256E9E051ED9D4BACE401253CABC6 /* CanBeIdentified.swift */; };
+		6A80D7023927D09F3B6E141C8AE6D15B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAE0BC8C9AD06D0FBE9CB0A05B8DB6B7 /* Foundation.framework */; };
+		6B95458A39F09F6F6D604F3EB55B4689 /* CodablePersistenceStore-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B845D6EA4BE7117815ED867CC4B2F479 /* CodablePersistenceStore-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7265E79BB2542D1E0005142CB43C52D9 /* CodablePersistenceStore-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 68BFDFEDB35DF039C58EA37249635C77 /* CodablePersistenceStore-dummy.m */; };
+		7680AB884A591F3BBA02ADE114CFAD57 /* Pods-CodablePersistenceStoreTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E249C0EF610A4B44EE76318B3C0A9D1 /* Pods-CodablePersistenceStoreTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		792A186628E43F24C43BBB7C3E52CEA2 /* Disk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7681DBCD1C0EBC57CE92E25A067DC32E /* Disk.framework */; };
+		7DC48EA5193199BACB8E865094D5E81D /* Disk+InternalHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDEAF4DCDE02630811084F08019940E /* Disk+InternalHelpers.swift */; };
+		7DEAD9C94771B345EF502F1BC332B5C7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAE0BC8C9AD06D0FBE9CB0A05B8DB6B7 /* Foundation.framework */; };
+		848CDDBA1582519B69B80C0B760B5D51 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAE0BC8C9AD06D0FBE9CB0A05B8DB6B7 /* Foundation.framework */; };
+		932B1EBDE75BE3BFB5593A5D18F4B97E /* CodablePersistenceStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FEAB298983D7BE8CA2DB09A23E6D9B /* CodablePersistenceStoreProtocol.swift */; };
+		9839F633EDD2178F090795CB55765A6F /* Disk-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AF781A76A9841234F2209CF8785E78 /* Disk-dummy.m */; };
+		C5D7F73A7C44062FAB68CB42C3C01C5B /* Disk+[Data].swift in Sources */ = {isa = PBXBuildFile; fileRef = 91289A7C18BFB31FD1DEE7342FB464F1 /* Disk+[Data].swift */; };
+		C923C57CF458F545BE904D82262B430A /* CanBePersisted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ACA863622AC7C9456968C711F43144 /* CanBePersisted.swift */; };
+		D035FFA705F4756639361B43987E6EF8 /* Disk.h in Headers */ = {isa = PBXBuildFile; fileRef = D2E621187DBB191581606F31737E34D6 /* Disk.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DF6F520EA5AA2801A3C753495411564C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAE0BC8C9AD06D0FBE9CB0A05B8DB6B7 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		09032116E619E013762EA7ACAB59547B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A6667A789B68302B3E3A3BD971C4EC1F;
+			remoteInfo = Disk;
+		};
+		6A6F6E42BDA8B69349057B9BBEA2DD45 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A6667A789B68302B3E3A3BD971C4EC1F;
+			remoteInfo = Disk;
+		};
+		ACB39A34F4D59A435AE89F4B9B2BFCBA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FFB47DCF279F5F977F7C6A97199BFF3C;
+			remoteInfo = CodablePersistenceStore;
+		};
+		ADBF81CB3B197349E85B5B3C96F7676B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FFB47DCF279F5F977F7C6A97199BFF3C;
+			remoteInfo = CodablePersistenceStore;
+		};
+		C89618390138AD0D3A79692AF6BCF80F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A6667A789B68302B3E3A3BD971C4EC1F;
+			remoteInfo = Disk;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0057F5042E1F63E0EBA82609AE403E31 /* Disk.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Disk.swift; path = Sources/Disk.swift; sourceTree = "<group>"; };
+		0A78706BC77B3556C2878320A9883A40 /* CodablePersistenceStore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CodablePersistenceStore.xcconfig; sourceTree = "<group>"; };
+		0D567112740D1C7E99558C0A87982AAA /* Disk+Errors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Disk+Errors.swift"; path = "Sources/Disk+Errors.swift"; sourceTree = "<group>"; };
+		0E73107915485651558DDAF9E428BE3E /* Pods-CodablePersistenceStore_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CodablePersistenceStore_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		134344506FDEF7051A1678AB4EDB98A4 /* CodablePersistenceStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CodablePersistenceStore.swift; path = CodablePersistenceStore/Classes/CodablePersistenceStore.swift; sourceTree = "<group>"; };
+		22C1792449EFCDD03EA1319A82C99503 /* CodablePersistenceStore-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CodablePersistenceStore-prefix.pch"; sourceTree = "<group>"; };
+		2BDEAF4DCDE02630811084F08019940E /* Disk+InternalHelpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Disk+InternalHelpers.swift"; path = "Sources/Disk+InternalHelpers.swift"; sourceTree = "<group>"; };
+		30C57AB49DF9D313F1021976C900C5A7 /* Pods-CodablePersistenceStore_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CodablePersistenceStore_Example-dummy.m"; sourceTree = "<group>"; };
+		3131E560B487B15E9076375589998B80 /* Pods-CodablePersistenceStoreTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CodablePersistenceStoreTests-dummy.m"; sourceTree = "<group>"; };
+		42DC7A16BD513E6FE9F239B28A0B3BD6 /* Disk+Data.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Disk+Data.swift"; path = "Sources/Disk+Data.swift"; sourceTree = "<group>"; };
+		4FD73E470B481ECA6DFCAE3773F2CF64 /* Pods-CodablePersistenceStoreTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CodablePersistenceStoreTests-frameworks.sh"; sourceTree = "<group>"; };
+		58F0E2DC67B3EC6F27AA5C509E322751 /* Pods-CodablePersistenceStore_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CodablePersistenceStore_Example.release.xcconfig"; sourceTree = "<group>"; };
+		5D6021E80C8470F0C4E28225CF9D82CE /* Disk+Codable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Disk+Codable.swift"; path = "Sources/Disk+Codable.swift"; sourceTree = "<group>"; };
+		5E7F3565F5B132451F88F7D56A10E3B0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		626525D4A308B00FFC018D67F592A5F3 /* Disk-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Disk-umbrella.h"; sourceTree = "<group>"; };
+		649AC1DF0E422073B6349560AF07EAFF /* Disk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Disk.framework; path = Disk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		668552DA9462261C77E71DFC7B1259F5 /* Pods-CodablePersistenceStoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CodablePersistenceStoreTests.debug.xcconfig"; sourceTree = "<group>"; };
+		68BFDFEDB35DF039C58EA37249635C77 /* CodablePersistenceStore-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CodablePersistenceStore-dummy.m"; sourceTree = "<group>"; };
+		6E249C0EF610A4B44EE76318B3C0A9D1 /* Pods-CodablePersistenceStoreTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CodablePersistenceStoreTests-umbrella.h"; sourceTree = "<group>"; };
+		6ED256E9E051ED9D4BACE401253CABC6 /* CanBeIdentified.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CanBeIdentified.swift; sourceTree = "<group>"; };
+		6F4B5D4CC377A334ABDB379B97CC6A8F /* Pods-CodablePersistenceStore_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-CodablePersistenceStore_Example.modulemap"; sourceTree = "<group>"; };
+		6FECCBB0736A70E18322C705748CFC43 /* Disk+Helpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Disk+Helpers.swift"; path = "Sources/Disk+Helpers.swift"; sourceTree = "<group>"; };
+		727D1BB7CEAEA5F8AD631F5FA5E2D585 /* Disk-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Disk-prefix.pch"; sourceTree = "<group>"; };
+		7493BAE1464A76414642A65EB41ACC5A /* Pods-CodablePersistenceStoreTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CodablePersistenceStoreTests-resources.sh"; sourceTree = "<group>"; };
+		7640DEB650BE95DC7DE36AEFFD00D8A8 /* Pods-CodablePersistenceStore_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CodablePersistenceStore_Example-umbrella.h"; sourceTree = "<group>"; };
+		7681DBCD1C0EBC57CE92E25A067DC32E /* Disk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Disk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E4A6E13B96B74E004FD045E2334942E /* Disk+UIImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Disk+UIImage.swift"; path = "Sources/Disk+UIImage.swift"; sourceTree = "<group>"; };
+		7F5396125C726E81A47858660E0000E3 /* Pods_CodablePersistenceStore_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CodablePersistenceStore_Example.framework; path = "Pods-CodablePersistenceStore_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		81ACA863622AC7C9456968C711F43144 /* CanBePersisted.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CanBePersisted.swift; sourceTree = "<group>"; };
+		8622DF23641B860E22449443D149A5EA /* CodablePersistenceStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CodablePersistenceStore.framework; path = CodablePersistenceStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		89AF781A76A9841234F2209CF8785E78 /* Disk-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Disk-dummy.m"; sourceTree = "<group>"; };
+		8B43445B5AADF182EB6681C6D7C4C4A1 /* Pods-CodablePersistenceStoreTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-CodablePersistenceStoreTests.modulemap"; sourceTree = "<group>"; };
+		8DFD1B78DAB4C6D3ED621206575E9D2D /* CodablePersistenceStoreErrors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CodablePersistenceStoreErrors.swift; path = CodablePersistenceStore/Classes/CodablePersistenceStoreErrors.swift; sourceTree = "<group>"; };
+		90975293572D6AB798ED7595410134B3 /* CodablePersistenceStore.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = CodablePersistenceStore.modulemap; sourceTree = "<group>"; };
+		91289A7C18BFB31FD1DEE7342FB464F1 /* Disk+[Data].swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Disk+[Data].swift"; path = "Sources/Disk+[Data].swift"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		97B70FD65EBE37E3370D78B937B10E20 /* Pods_CodablePersistenceStoreTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CodablePersistenceStoreTests.framework; path = "Pods-CodablePersistenceStoreTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F5B5076FE102A17BDF6B195ECFE1EDF /* Pods-CodablePersistenceStore_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CodablePersistenceStore_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		A41A1AC2A88DB33982892CDAA772CAE9 /* Pods-CodablePersistenceStoreTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CodablePersistenceStoreTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		A613F594407744A305C16B2B0F43E8CE /* Pods-CodablePersistenceStore_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CodablePersistenceStore_Example-frameworks.sh"; sourceTree = "<group>"; };
+		ABF1A0A945FCD494A4A91F29D8682A23 /* Disk+VolumeInformation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Disk+VolumeInformation.swift"; path = "Sources/Disk+VolumeInformation.swift"; sourceTree = "<group>"; };
+		AFFEB512A394E6BBE26439FD17B07718 /* Pods-CodablePersistenceStoreTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CodablePersistenceStoreTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		B845D6EA4BE7117815ED867CC4B2F479 /* CodablePersistenceStore-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CodablePersistenceStore-umbrella.h"; sourceTree = "<group>"; };
+		B9D0F309995BDBB9163D1A777C932EDC /* Disk.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Disk.xcconfig; sourceTree = "<group>"; };
+		BAE0BC8C9AD06D0FBE9CB0A05B8DB6B7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		C493A3BB622450A866AD6FA0DD5367C7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D1FEAB298983D7BE8CA2DB09A23E6D9B /* CodablePersistenceStoreProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CodablePersistenceStoreProtocol.swift; path = CodablePersistenceStore/Classes/CodablePersistenceStoreProtocol.swift; sourceTree = "<group>"; };
+		D2E621187DBB191581606F31737E34D6 /* Disk.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Disk.h; path = Sources/Disk.h; sourceTree = "<group>"; };
+		D48C9EC99421DEA756AA258BAD8916C0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D6232933C408740D285CBC711ADAD85F /* Pods-CodablePersistenceStore_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CodablePersistenceStore_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		D8798F6EAE3E25C1F622986AAE06E88F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E68E60FCF8025AACFAF1961CB4BF4531 /* Disk.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Disk.modulemap; sourceTree = "<group>"; };
+		EA9426A2E037AF1946BD585FDEB30704 /* Pods-CodablePersistenceStore_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CodablePersistenceStore_Example-resources.sh"; sourceTree = "<group>"; };
+		FAC1E44A835E8EA7CE162F79E766B1EE /* Pods-CodablePersistenceStoreTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CodablePersistenceStoreTests.release.xcconfig"; sourceTree = "<group>"; };
+		FE8F5B08062179972F8DB524192688A9 /* Disk+[UIImage].swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Disk+[UIImage].swift"; path = "Sources/Disk+[UIImage].swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4174F331BA75EAEBA068E03DBF2CB88C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A80D7023927D09F3B6E141C8AE6D15B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA431C3BD3F169EDD320E55B66AEC4E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF6F520EA5AA2801A3C753495411564C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBD419BACEF74DFC820DABB7687B0CAF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DEAD9C94771B345EF502F1BC332B5C7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E72B72E2DCD16FF0CA23149030BD14DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				792A186628E43F24C43BBB7C3E52CEA2 /* Disk.framework in Frameworks */,
+				848CDDBA1582519B69B80C0B760B5D51 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0A664A8902EECDA924F1D2CC84A734A4 /* CanBeProtocols */ = {
+			isa = PBXGroup;
+			children = (
+				6ED256E9E051ED9D4BACE401253CABC6 /* CanBeIdentified.swift */,
+				81ACA863622AC7C9456968C711F43144 /* CanBePersisted.swift */,
+			);
+			name = CanBeProtocols;
+			path = CodablePersistenceStore/Classes/CanBeProtocols;
+			sourceTree = "<group>";
+		};
+		0B5E45875360607F2D9330B00FE1CA11 /* CodablePersistenceStore */ = {
+			isa = PBXGroup;
+			children = (
+				134344506FDEF7051A1678AB4EDB98A4 /* CodablePersistenceStore.swift */,
+				8DFD1B78DAB4C6D3ED621206575E9D2D /* CodablePersistenceStoreErrors.swift */,
+				D1FEAB298983D7BE8CA2DB09A23E6D9B /* CodablePersistenceStoreProtocol.swift */,
+				0A664A8902EECDA924F1D2CC84A734A4 /* CanBeProtocols */,
+				9C65294DA61A68D5A913CA9F2AC97802 /* Support Files */,
+			);
+			name = CodablePersistenceStore;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		15217779E2D3E3AB7950F9A8669EB52B /* Pods-CodablePersistenceStore_Example */ = {
+			isa = PBXGroup;
+			children = (
+				D48C9EC99421DEA756AA258BAD8916C0 /* Info.plist */,
+				6F4B5D4CC377A334ABDB379B97CC6A8F /* Pods-CodablePersistenceStore_Example.modulemap */,
+				D6232933C408740D285CBC711ADAD85F /* Pods-CodablePersistenceStore_Example-acknowledgements.markdown */,
+				9F5B5076FE102A17BDF6B195ECFE1EDF /* Pods-CodablePersistenceStore_Example-acknowledgements.plist */,
+				30C57AB49DF9D313F1021976C900C5A7 /* Pods-CodablePersistenceStore_Example-dummy.m */,
+				A613F594407744A305C16B2B0F43E8CE /* Pods-CodablePersistenceStore_Example-frameworks.sh */,
+				EA9426A2E037AF1946BD585FDEB30704 /* Pods-CodablePersistenceStore_Example-resources.sh */,
+				7640DEB650BE95DC7DE36AEFFD00D8A8 /* Pods-CodablePersistenceStore_Example-umbrella.h */,
+				0E73107915485651558DDAF9E428BE3E /* Pods-CodablePersistenceStore_Example.debug.xcconfig */,
+				58F0E2DC67B3EC6F27AA5C509E322751 /* Pods-CodablePersistenceStore_Example.release.xcconfig */,
+			);
+			name = "Pods-CodablePersistenceStore_Example";
+			path = "Target Support Files/Pods-CodablePersistenceStore_Example";
+			sourceTree = "<group>";
+		};
+		25F61436C69854E4F724FB49D7E56982 /* Pods-CodablePersistenceStoreTests */ = {
+			isa = PBXGroup;
+			children = (
+				5E7F3565F5B132451F88F7D56A10E3B0 /* Info.plist */,
+				8B43445B5AADF182EB6681C6D7C4C4A1 /* Pods-CodablePersistenceStoreTests.modulemap */,
+				AFFEB512A394E6BBE26439FD17B07718 /* Pods-CodablePersistenceStoreTests-acknowledgements.markdown */,
+				A41A1AC2A88DB33982892CDAA772CAE9 /* Pods-CodablePersistenceStoreTests-acknowledgements.plist */,
+				3131E560B487B15E9076375589998B80 /* Pods-CodablePersistenceStoreTests-dummy.m */,
+				4FD73E470B481ECA6DFCAE3773F2CF64 /* Pods-CodablePersistenceStoreTests-frameworks.sh */,
+				7493BAE1464A76414642A65EB41ACC5A /* Pods-CodablePersistenceStoreTests-resources.sh */,
+				6E249C0EF610A4B44EE76318B3C0A9D1 /* Pods-CodablePersistenceStoreTests-umbrella.h */,
+				668552DA9462261C77E71DFC7B1259F5 /* Pods-CodablePersistenceStoreTests.debug.xcconfig */,
+				FAC1E44A835E8EA7CE162F79E766B1EE /* Pods-CodablePersistenceStoreTests.release.xcconfig */,
+			);
+			name = "Pods-CodablePersistenceStoreTests";
+			path = "Target Support Files/Pods-CodablePersistenceStoreTests";
+			sourceTree = "<group>";
+		};
+		4113E599B9716465B5AC5A422FF86F16 /* Disk */ = {
+			isa = PBXGroup;
+			children = (
+				D2E621187DBB191581606F31737E34D6 /* Disk.h */,
+				0057F5042E1F63E0EBA82609AE403E31 /* Disk.swift */,
+				91289A7C18BFB31FD1DEE7342FB464F1 /* Disk+[Data].swift */,
+				FE8F5B08062179972F8DB524192688A9 /* Disk+[UIImage].swift */,
+				5D6021E80C8470F0C4E28225CF9D82CE /* Disk+Codable.swift */,
+				42DC7A16BD513E6FE9F239B28A0B3BD6 /* Disk+Data.swift */,
+				0D567112740D1C7E99558C0A87982AAA /* Disk+Errors.swift */,
+				6FECCBB0736A70E18322C705748CFC43 /* Disk+Helpers.swift */,
+				2BDEAF4DCDE02630811084F08019940E /* Disk+InternalHelpers.swift */,
+				7E4A6E13B96B74E004FD045E2334942E /* Disk+UIImage.swift */,
+				ABF1A0A945FCD494A4A91F29D8682A23 /* Disk+VolumeInformation.swift */,
+				5EF6088058C38457F2C931CCBAEE1120 /* Support Files */,
+			);
+			name = Disk;
+			path = Disk;
+			sourceTree = "<group>";
+		};
+		4E5032FD58F98C1318B6BDA11DD7FA10 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8622DF23641B860E22449443D149A5EA /* CodablePersistenceStore.framework */,
+				649AC1DF0E422073B6349560AF07EAFF /* Disk.framework */,
+				7F5396125C726E81A47858660E0000E3 /* Pods_CodablePersistenceStore_Example.framework */,
+				97B70FD65EBE37E3370D78B937B10E20 /* Pods_CodablePersistenceStoreTests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		59C86BA44B455E7AC17743F254CC0D94 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				15217779E2D3E3AB7950F9A8669EB52B /* Pods-CodablePersistenceStore_Example */,
+				25F61436C69854E4F724FB49D7E56982 /* Pods-CodablePersistenceStoreTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		5EF6088058C38457F2C931CCBAEE1120 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E68E60FCF8025AACFAF1961CB4BF4531 /* Disk.modulemap */,
+				B9D0F309995BDBB9163D1A777C932EDC /* Disk.xcconfig */,
+				89AF781A76A9841234F2209CF8785E78 /* Disk-dummy.m */,
+				727D1BB7CEAEA5F8AD631F5FA5E2D585 /* Disk-prefix.pch */,
+				626525D4A308B00FFC018D67F592A5F3 /* Disk-umbrella.h */,
+				C493A3BB622450A866AD6FA0DD5367C7 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Disk";
+			sourceTree = "<group>";
+		};
+		6DEEF0ADCF6E579B75DC7062EBE41939 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4113E599B9716465B5AC5A422FF86F16 /* Disk */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				E838D3E185353746E3EE513812D3FCDB /* Development Pods */,
+				A6FE23C2CA297179F039FA15508F5EF4 /* Frameworks */,
+				6DEEF0ADCF6E579B75DC7062EBE41939 /* Pods */,
+				4E5032FD58F98C1318B6BDA11DD7FA10 /* Products */,
+				59C86BA44B455E7AC17743F254CC0D94 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		9C65294DA61A68D5A913CA9F2AC97802 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				90975293572D6AB798ED7595410134B3 /* CodablePersistenceStore.modulemap */,
+				0A78706BC77B3556C2878320A9883A40 /* CodablePersistenceStore.xcconfig */,
+				68BFDFEDB35DF039C58EA37249635C77 /* CodablePersistenceStore-dummy.m */,
+				22C1792449EFCDD03EA1319A82C99503 /* CodablePersistenceStore-prefix.pch */,
+				B845D6EA4BE7117815ED867CC4B2F479 /* CodablePersistenceStore-umbrella.h */,
+				D8798F6EAE3E25C1F622986AAE06E88F /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/CodablePersistenceStore";
+			sourceTree = "<group>";
+		};
+		A2EC20F66CDB2AED2D8C7A19D1DAEDA3 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				BAE0BC8C9AD06D0FBE9CB0A05B8DB6B7 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		A6FE23C2CA297179F039FA15508F5EF4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7681DBCD1C0EBC57CE92E25A067DC32E /* Disk.framework */,
+				A2EC20F66CDB2AED2D8C7A19D1DAEDA3 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E838D3E185353746E3EE513812D3FCDB /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0B5E45875360607F2D9330B00FE1CA11 /* CodablePersistenceStore */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		21DA9CEA946985BE6BF117E74B446433 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7680AB884A591F3BBA02ADE114CFAD57 /* Pods-CodablePersistenceStoreTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		566249AA1E07C22F86FB4B22002BAC34 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2586B05B52D44DE6DDF3F2C4C466AD80 /* Pods-CodablePersistenceStore_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC9BCFD03E0EAD7A6C1585076C46C813 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				39CDB8568203D619EB56B4DFC27A7B6F /* Disk-umbrella.h in Headers */,
+				D035FFA705F4756639361B43987E6EF8 /* Disk.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E75961612C15109A2CA449F537BFC425 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B95458A39F09F6F6D604F3EB55B4689 /* CodablePersistenceStore-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		1F524142DAEC6C1882E19FDAAF3DE91A /* Pods-CodablePersistenceStore_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA105792162E6983068DE0CDF193BBBE /* Build configuration list for PBXNativeTarget "Pods-CodablePersistenceStore_Example" */;
+			buildPhases = (
+				06642C7C3DE2951C49843F9EC19B7BAC /* Sources */,
+				4174F331BA75EAEBA068E03DBF2CB88C /* Frameworks */,
+				566249AA1E07C22F86FB4B22002BAC34 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0DF2C6E8C5ADEA53340B7025D0B93DC5 /* PBXTargetDependency */,
+				A88ED0CDE8742CFC028B451AB0409A80 /* PBXTargetDependency */,
+			);
+			name = "Pods-CodablePersistenceStore_Example";
+			productName = "Pods-CodablePersistenceStore_Example";
+			productReference = 7F5396125C726E81A47858660E0000E3 /* Pods_CodablePersistenceStore_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		A6667A789B68302B3E3A3BD971C4EC1F /* Disk */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7191C741CD5183578C440E10E2F71CE4 /* Build configuration list for PBXNativeTarget "Disk" */;
+			buildPhases = (
+				C44D201503E95E49DD13F2B6CD00EF77 /* Sources */,
+				BBD419BACEF74DFC820DABB7687B0CAF /* Frameworks */,
+				BC9BCFD03E0EAD7A6C1585076C46C813 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Disk;
+			productName = Disk;
+			productReference = 649AC1DF0E422073B6349560AF07EAFF /* Disk.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B1FBD5B9E112894EFE630705CC009ADD /* Pods-CodablePersistenceStoreTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2D0F27BF88ED0646AC0B591A370F31E7 /* Build configuration list for PBXNativeTarget "Pods-CodablePersistenceStoreTests" */;
+			buildPhases = (
+				BCDE656F6A9E17A3DC43F361353B6983 /* Sources */,
+				AA431C3BD3F169EDD320E55B66AEC4E8 /* Frameworks */,
+				21DA9CEA946985BE6BF117E74B446433 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				37CDC7FAE407DEC8DDC6DA23C760DD76 /* PBXTargetDependency */,
+				E9C964C9B7FE038353243EFC8B9F88D1 /* PBXTargetDependency */,
+			);
+			name = "Pods-CodablePersistenceStoreTests";
+			productName = "Pods-CodablePersistenceStoreTests";
+			productReference = 97B70FD65EBE37E3370D78B937B10E20 /* Pods_CodablePersistenceStoreTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		FFB47DCF279F5F977F7C6A97199BFF3C /* CodablePersistenceStore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2FC1F2DD65C42A8DD7A878D3D524C39D /* Build configuration list for PBXNativeTarget "CodablePersistenceStore" */;
+			buildPhases = (
+				94D45E80C37D53DCABB7F4F186AC5C04 /* Sources */,
+				E72B72E2DCD16FF0CA23149030BD14DB /* Frameworks */,
+				E75961612C15109A2CA449F537BFC425 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C6B79B068FDEA1DFCF91E4BC2901C224 /* PBXTargetDependency */,
+			);
+			name = CodablePersistenceStore;
+			productName = CodablePersistenceStore;
+			productReference = 8622DF23641B860E22449443D149A5EA /* CodablePersistenceStore.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 4E5032FD58F98C1318B6BDA11DD7FA10 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FFB47DCF279F5F977F7C6A97199BFF3C /* CodablePersistenceStore */,
+				A6667A789B68302B3E3A3BD971C4EC1F /* Disk */,
+				1F524142DAEC6C1882E19FDAAF3DE91A /* Pods-CodablePersistenceStore_Example */,
+				B1FBD5B9E112894EFE630705CC009ADD /* Pods-CodablePersistenceStoreTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		06642C7C3DE2951C49843F9EC19B7BAC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12C489008F72139E5DA9D23D33890256 /* Pods-CodablePersistenceStore_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94D45E80C37D53DCABB7F4F186AC5C04 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6865B44EECB143A14CE69922AC76E255 /* CanBeIdentified.swift in Sources */,
+				C923C57CF458F545BE904D82262B430A /* CanBePersisted.swift in Sources */,
+				7265E79BB2542D1E0005142CB43C52D9 /* CodablePersistenceStore-dummy.m in Sources */,
+				250E4C3F218DFAE138D32B7F38840360 /* CodablePersistenceStore.swift in Sources */,
+				15E605CC6CEF01BCC8C70EF3CB48ADD4 /* CodablePersistenceStoreErrors.swift in Sources */,
+				932B1EBDE75BE3BFB5593A5D18F4B97E /* CodablePersistenceStoreProtocol.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCDE656F6A9E17A3DC43F361353B6983 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6374424E5452445DCBD3F49133ECCEF9 /* Pods-CodablePersistenceStoreTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C44D201503E95E49DD13F2B6CD00EF77 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5D7F73A7C44062FAB68CB42C3C01C5B /* Disk+[Data].swift in Sources */,
+				35D30646D57F37FF5E122A42D6AAEFD2 /* Disk+[UIImage].swift in Sources */,
+				1717AA0112E384D22C695184211D1BD9 /* Disk+Codable.swift in Sources */,
+				4F8EE79D588510949C767BCBDB101024 /* Disk+Data.swift in Sources */,
+				5744363B57B485BA13CAB01231611E87 /* Disk+Errors.swift in Sources */,
+				5A22E9B6DC567D2C141C0F39611E2670 /* Disk+Helpers.swift in Sources */,
+				7DC48EA5193199BACB8E865094D5E81D /* Disk+InternalHelpers.swift in Sources */,
+				64691592B2DE73911DA265DC20B78B59 /* Disk+UIImage.swift in Sources */,
+				2BA9B0E25E8E4CB05CDD31C3CDC14BDA /* Disk+VolumeInformation.swift in Sources */,
+				9839F633EDD2178F090795CB55765A6F /* Disk-dummy.m in Sources */,
+				14FEF585D76BB97CD6346E2A2F248D01 /* Disk.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0DF2C6E8C5ADEA53340B7025D0B93DC5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CodablePersistenceStore;
+			target = FFB47DCF279F5F977F7C6A97199BFF3C /* CodablePersistenceStore */;
+			targetProxy = ACB39A34F4D59A435AE89F4B9B2BFCBA /* PBXContainerItemProxy */;
+		};
+		37CDC7FAE407DEC8DDC6DA23C760DD76 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CodablePersistenceStore;
+			target = FFB47DCF279F5F977F7C6A97199BFF3C /* CodablePersistenceStore */;
+			targetProxy = ADBF81CB3B197349E85B5B3C96F7676B /* PBXContainerItemProxy */;
+		};
+		A88ED0CDE8742CFC028B451AB0409A80 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Disk;
+			target = A6667A789B68302B3E3A3BD971C4EC1F /* Disk */;
+			targetProxy = 6A6F6E42BDA8B69349057B9BBEA2DD45 /* PBXContainerItemProxy */;
+		};
+		C6B79B068FDEA1DFCF91E4BC2901C224 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Disk;
+			target = A6667A789B68302B3E3A3BD971C4EC1F /* Disk */;
+			targetProxy = C89618390138AD0D3A79692AF6BCF80F /* PBXContainerItemProxy */;
+		};
+		E9C964C9B7FE038353243EFC8B9F88D1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Disk;
+			target = A6667A789B68302B3E3A3BD971C4EC1F /* Disk */;
+			targetProxy = 09032116E619E013762EA7ACAB59547B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		314F6C39963A19E820F80975A2F1E66C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 668552DA9462261C77E71DFC7B1259F5 /* Pods-CodablePersistenceStoreTests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CodablePersistenceStoreTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CodablePersistenceStoreTests/Pods-CodablePersistenceStoreTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_CodablePersistenceStoreTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		33DA7F43A1D2FA3C74A8C8FC246E1FA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		5714010688AA50D24689FD636B918766 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9D0F309995BDBB9163D1A777C932EDC /* Disk.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Disk/Disk-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Disk/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Disk/Disk.modulemap";
+				PRODUCT_NAME = Disk;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		731DC216E1A58545B559F6E0A2418060 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		85DB4735AB0BEABFB3088ADF02CD090C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FAC1E44A835E8EA7CE162F79E766B1EE /* Pods-CodablePersistenceStoreTests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CodablePersistenceStoreTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CodablePersistenceStoreTests/Pods-CodablePersistenceStoreTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_CodablePersistenceStoreTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		90D41456C00199049A43D3B02045672E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A78706BC77B3556C2878320A9883A40 /* CodablePersistenceStore.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/CodablePersistenceStore/CodablePersistenceStore-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CodablePersistenceStore/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/CodablePersistenceStore/CodablePersistenceStore.modulemap";
+				PRODUCT_NAME = CodablePersistenceStore;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		951DD02B72BDF17C5AB47DB693475B85 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9D0F309995BDBB9163D1A777C932EDC /* Disk.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Disk/Disk-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Disk/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Disk/Disk.modulemap";
+				PRODUCT_NAME = Disk;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		958CFD3C7D3DD1201B82DFF97BA9F9EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E73107915485651558DDAF9E428BE3E /* Pods-CodablePersistenceStore_Example.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CodablePersistenceStore_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CodablePersistenceStore_Example/Pods-CodablePersistenceStore_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_CodablePersistenceStore_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		DB4C469D13CF4517BD539A28BBB6B596 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A78706BC77B3556C2878320A9883A40 /* CodablePersistenceStore.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/CodablePersistenceStore/CodablePersistenceStore-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CodablePersistenceStore/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/CodablePersistenceStore/CodablePersistenceStore.modulemap";
+				PRODUCT_NAME = CodablePersistenceStore;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F0DD8659E31BA92DAB2B2807DF3CA06E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58F0E2DC67B3EC6F27AA5C509E322751 /* Pods-CodablePersistenceStore_Example.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CodablePersistenceStore_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CodablePersistenceStore_Example/Pods-CodablePersistenceStore_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_CodablePersistenceStore_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D0F27BF88ED0646AC0B591A370F31E7 /* Build configuration list for PBXNativeTarget "Pods-CodablePersistenceStoreTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				314F6C39963A19E820F80975A2F1E66C /* Debug */,
+				85DB4735AB0BEABFB3088ADF02CD090C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				33DA7F43A1D2FA3C74A8C8FC246E1FA6 /* Debug */,
+				731DC216E1A58545B559F6E0A2418060 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2FC1F2DD65C42A8DD7A878D3D524C39D /* Build configuration list for PBXNativeTarget "CodablePersistenceStore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB4C469D13CF4517BD539A28BBB6B596 /* Debug */,
+				90D41456C00199049A43D3B02045672E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7191C741CD5183578C440E10E2F71CE4 /* Build configuration list for PBXNativeTarget "Disk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5714010688AA50D24689FD636B918766 /* Debug */,
+				951DD02B72BDF17C5AB47DB693475B85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA105792162E6983068DE0CDF193BBBE /* Build configuration list for PBXNativeTarget "Pods-CodablePersistenceStore_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				958CFD3C7D3DD1201B82DFF97BA9F9EC /* Debug */,
+				F0DD8659E31BA92DAB2B2807DF3CA06E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

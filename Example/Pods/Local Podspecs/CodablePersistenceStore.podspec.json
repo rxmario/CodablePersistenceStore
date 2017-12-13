@@ -1,0 +1,27 @@
+{
+  "name": "CodablePersistenceStore",
+  "version": "0.1.0",
+  "summary": "A short description of CodablePersistenceStore.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/Mario Zimmermann/CodablePersistenceStore",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Mario Zimmermann": "mario.zimmermann@atino.de"
+  },
+  "source": {
+    "git": "https://github.com/Mario Zimmermann/CodablePersistenceStore.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source_files": "CodablePersistenceStore/Classes/**/*",
+  "dependencies": {
+    "Disk": [
+      "~> 0.3.2"
+    ]
+  }
+}
