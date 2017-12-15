@@ -16,6 +16,9 @@ public protocol CodablePersistenceStoreProtocol {
     func persist<T: PersistableType>(_ item: T!) throws
     func persist<T: PersistableType>(_ item: T!,completion: @escaping () -> ()) throws
     
+    func append<T: PersistableType>(_ item: T!) throws
+    func append<T: PersistableType>(_ item: T!, completion: @escaping () -> ()) throws
+    
     func delete<T: PersistableType>(_ item: T!) throws
     func delete<T: PersistableType>(_ item: T!, completion: @escaping () -> ()) throws
     func delete<T: PersistableType>(_ identifier: String, type: T.Type) throws
@@ -54,7 +57,7 @@ public protocol CodablePersistenceStoreProtocol {
 //        _ key2: String,
 //        _ object2: T) -> ComparisonResult)) throws
     
-    func clear(directory: Disk.Directory) throws
+    func cacheClear() throws
 }
 
 //public extension CodablePersistenceStoreProtocol {

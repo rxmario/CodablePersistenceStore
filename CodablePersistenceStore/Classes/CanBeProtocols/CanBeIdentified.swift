@@ -8,5 +8,5 @@
 import Foundation
 
 public protocol CanBeIdentifiedProtocol {
-    func id() -> String
+    static func id() -> String
 }

@@ -16,12 +16,12 @@
     "tag": "0.1.0"
   },
   "platforms": {
-    "ios": "9.0"
+    "ios": "10.0"
   },
   "source_files": "CodablePersistenceStore/Classes/**/*",
   "dependencies": {
     "Disk": [
-      "~> 0.3.2"
+      "~> 0.3.3"
     ]
   }
 }

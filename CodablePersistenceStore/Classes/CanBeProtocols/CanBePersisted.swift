@@ -13,6 +13,6 @@ public protocol CanBePersistedProtocol: CanBeIdentifiedProtocol {
 
 public extension CanBePersistedProtocol {
     static func ==(lhs:Self, rhs:Self) -> Bool {
-        return (type(of:lhs).path() == type(of:rhs).path() && lhs.id() == rhs.id())
+        return (type(of:lhs).path() == type(of:rhs).path() && type(of: lhs).id() == type(of: rhs).id())
     }
 }

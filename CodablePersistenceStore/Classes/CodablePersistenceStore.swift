@@ -10,22 +10,8 @@ import Disk
 
 public typealias PersistableType = Codable & CanBePersistedProtocol
 
-struct Msg: PersistableType {
-    var hey: String
-    
-    func id() -> String {
-        return "hi"
-    }
-    
-    static func path() -> String {
-        return "yo"
-    }
-}
-
 open class CodablePersistenceStore: CodablePersistenceStoreProtocol {
 
-    
-    
     var prefix: String!
     
     public init(prefix: String){
@@ -45,12 +31,15 @@ open class CodablePersistenceStore: CodablePersistenceStoreProtocol {
     public func persist<T>(_ item: T!) throws where T : PersistableType {
         
         let path = type(of: item).path()
-        let filePath = self.createPath(path: path, id: item.id())
+        let id = type(of: item).id()
+        let filePath = self.createPath(path: path, id: id)
         print(filePath)
         
         do {
             try Disk.save(item, to: .caches, as: filePath)
-            print(item)
+            let encoder = JSONEncoder()
+            let encoded = try encoder.encode(item)
+            print(String(data: encoded, encoding: .utf8)!)
         } catch let error as NSError {
             throw CodablePersistenceStoreErrors.CannotUseProvidedItem(item: item, error: error)
         }
@@ -59,7 +48,8 @@ open class CodablePersistenceStore: CodablePersistenceStoreProtocol {
     public func persist<T>(_ item: T!, completion: @escaping () -> ()) throws where T : PersistableType {
         
         let path = type(of: item).path()
-        let finalPath = self.createPath(path: path, id: item.id())
+        let id = type(of: item).id()
+        let finalPath = self.createPath(path: path, id: id)
         
         do {
             try Disk.save(item, to: .caches, as: finalPath)
@@ -69,9 +59,38 @@ open class CodablePersistenceStore: CodablePersistenceStoreProtocol {
         }
     }
     
+    public func append<T>(_ item: T!) throws where T : PersistableType {
+        
+        let path = type(of: item).path()
+        let id = type(of: item).id()
+        let finalPath = self.createPath(path: path, id: id)
+        
+        do {
+            try Disk.append(item, to: finalPath, in: .caches)
+        } catch let error as NSError {
+            throw error
+        }
+        
+    }
+    
+    public func append<T>(_ item: T!, completion: @escaping () -> ()) throws where T : PersistableType {
+        
+        let path = type(of: item).path()
+        let id = type(of: item).id()
+        let finalPath = self.createPath(path: path, id: id)
+        
+        do {
+            try Disk.append(item, to: finalPath, in: .caches)
+            completion()
+        } catch let error as NSError {
+            throw error
+        }
+        
+    }
+    
     public func delete<T>(_ item: T!) throws where T : PersistableType {
         
-        let id = item.id()
+        let id = type(of: item).id()
         let path = type(of: item).path()
         let filePath = self.createPath(path: path, id: id)
         
@@ -84,7 +103,7 @@ open class CodablePersistenceStore: CodablePersistenceStoreProtocol {
     
     public func delete<T>(_ item: T!, completion: @escaping () -> ()) throws where T : PersistableType {
         
-        let id = item.id()
+        let id = type(of: item).id()
         let path = type(of: item).path()
         let filePath = self.createPath(path: path, id: id)
         
@@ -148,10 +167,12 @@ open class CodablePersistenceStore: CodablePersistenceStoreProtocol {
     
     public func getAll<T>(_ type: T.Type) throws -> [T] where T : PersistableType {
         
-        let path = "xmari0/yo/hey.json"
+        let path = T.path()
+        let id = T.id()
+        let finalPath = self.createPath(path: path, id: id)
         
         do {
-            let storedData = try Disk.retrieve(path, from: .documents, as: [T].self)
+            let storedData = try Disk.retrieve(finalPath, from: .caches, as: [T].self)
             return storedData
         } catch let error as NSError {
             throw error
@@ -160,12 +181,12 @@ open class CodablePersistenceStore: CodablePersistenceStoreProtocol {
     
     public func getAll<T>(_ type: T.Type, completion: @escaping ([T]) -> Void) throws where T : PersistableType {
         
-        let path = "xmari0/\(type.path())/hey.json"
-        print(path)
+        let path = T.path()
+        let id = T.id()
+        let finalPath = self.createPath(path: path, id: id)
         
         do {
-            // Hier ist das Problem -_-
-            let storedData = try Disk.retrieve(path, from: .caches, as: [T].self)
+            let storedData = try Disk.retrieve(finalPath, from: .caches, as: [T].self)
             completion(storedData)
         } catch let error as NSError {
             throw error
@@ -173,16 +194,16 @@ open class CodablePersistenceStore: CodablePersistenceStoreProtocol {
     }
     
     public func exists(_ item: PersistableType!) -> Bool {
-        let id = item.id()
+        let id = type(of: item).id()
         let path = type(of: item).path()
         let filePath = self.createPath(path: path, id: id)
         let bool = Disk.exists(filePath, in: .caches)
         return bool
     }
     
-    public func clear(directory: Disk.Directory) throws {
+    public func cacheClear() throws {
         do {
-            try Disk.clear(directory)
+            try Disk.clear(.caches)
         } catch let error as NSError {
             fatalError(self.printDescribingError(error: error))
         }

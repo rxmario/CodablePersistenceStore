@@ -10,15 +10,21 @@ import Foundation
 import CodablePersistenceStore
 
 struct Message: PersistableType {
+    
     let title: String
     let body: String
     
-    func id() -> String {
+    enum CodingKeys: String, CodingKey {
+        case title
+        case body
+    }
+    
+   static func id() -> String {
         return "hey"
     }
     
     static func path() -> String {
-        return "yo"
+        return "Yo"
     }
     
 }

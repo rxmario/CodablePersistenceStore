@@ -24,10 +24,7 @@ class CodablePersistenceStoreTests: XCTestCase {
     
     override func tearDown() {
         do {
-            try self.persistenceStore.clear(directory: .documents)
-            try self.persistenceStore.clear(directory: .caches)
-            try self.persistenceStore.clear(directory: .applicationSupport)
-            try self.persistenceStore.clear(directory: .temporary)
+            try self.persistenceStore.cacheClear()
         } catch {
             fatalError("smthin went wrong.")
         }
@@ -121,18 +118,18 @@ class CodablePersistenceStoreTests: XCTestCase {
         
         try self.persistenceStore.persist(messages[0])
         
-        try self.persistenceStore.delete(messages[0].id(), type: Message.self, completion: {
+        try self.persistenceStore.delete("hey", type: Message.self, completion: {
             exp.fulfill()
         })
         
-        let exists = try self.persistenceStore.exists(messages[0])
+        let exists = try! self.persistenceStore.exists(messages[0])
         XCTAssertFalse(exists)
         
         waitForExpectations(timeout: 5, handler: nil)
         
     }
     
-    func testGetAllWithThreeNormalEntrys() {
+    func testGetAllWithThreeNormalEntrysWithCompletion() {
         
         let expectedMessage0 = messages[0]
         let expectedMessage1 = messages[1]
@@ -141,12 +138,12 @@ class CodablePersistenceStoreTests: XCTestCase {
         let exp = expectation(description: "Received data")
 
         XCTAssertNoThrow(try self.persistenceStore.persist(expectedMessage0))
-
-        //XCTAssertNoThrow(try self.persistenceStore.persist(messages[2]))
+        XCTAssertNoThrow(try self.persistenceStore.append(expectedMessage1))
+        XCTAssertNoThrow(try self.persistenceStore.append(expectedMessage2))
         
             do {
                 try self.persistenceStore.getAll(Message.self, completion: { (msgs) in
-                    XCTAssertNotNil(msgs)
+                    XCTAssertEqual(msgs[0], expectedMessage0)
                     exp.fulfill()
                 })
             } catch let e as NSError {
@@ -156,5 +153,36 @@ class CodablePersistenceStoreTests: XCTestCase {
         
         waitForExpectations(timeout: 10, handler: nil)
 
+    }
+    
+    func testGetAllWithThreeNormalEntrysWithoutCompletion() {
+        
+        let expectedMessage0 = messages[0]
+        let expectedMessage1 = messages[1]
+        let expectedMessage2 = messages[2]
+        
+        let exp0 = expectation(description: "data persisted")
+        let exp1 = expectation(description: "data received")
+        do {
+            try self.persistenceStore.persist(expectedMessage0)
+            try self.persistenceStore.append(expectedMessage1)
+            try self.persistenceStore.append(expectedMessage2)
+            exp0.fulfill()
+        } catch let error as NSError {
+            XCTFail(error.localizedDescription)
+        }
+        
+        do {
+            let messagez = try self.persistenceStore.getAll(Message.self)
+            XCTAssertEqual(messagez[0], expectedMessage0)
+            XCTAssertEqual(messagez[1], expectedMessage1)
+            XCTAssertEqual(messagez[2], expectedMessage2)
+            exp1.fulfill()
+        } catch let error as NSError {
+            XCTFail(error.localizedDescription)
+        }
+        
+        
+        waitForExpectations(timeout: 10 , handler: nil)
     }
 }

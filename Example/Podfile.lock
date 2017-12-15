@@ -1,7 +1,7 @@
 PODS:
   - CodablePersistenceStore (0.1.0):
-    - Disk (~> 0.3.2)
-  - Disk (0.3.2)
+    - Disk (~> 0.3.3)
+  - Disk (0.3.3)
 
 DEPENDENCIES:
   - CodablePersistenceStore (from `../`)
@@ -11,8 +11,8 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  CodablePersistenceStore: d3d50e4e252bf6e9f6655ad5dedd6d5e55f8c0a7
-  Disk: 52ebc1656944971c73a661458713b3b7497c1b4c
+  CodablePersistenceStore: 017e992ff7917acc6e4e213a33436626b98ade70
+  Disk: d1f55cd61f6ca20f368232d0c6e37e3c3dfcb63e
 
 PODFILE CHECKSUM: 9efa8e43d2811a2bb2acabeee1e9440c443b4e0e
 
