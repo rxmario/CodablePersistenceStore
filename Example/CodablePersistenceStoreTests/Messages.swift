@@ -11,6 +11,7 @@ import CodablePersistenceStore
 
 struct Message: PersistableType {
     
+    let idz: String
     let title: String
     let body: String
     

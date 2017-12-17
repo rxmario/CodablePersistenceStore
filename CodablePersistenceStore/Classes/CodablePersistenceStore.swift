@@ -182,7 +182,6 @@ open class CodablePersistenceStore: CodablePersistenceStoreProtocol {
         } catch {
             throw CodablePersistenceStoreErrors.CannotUseType(type: T.Type.self, inStoreWithType: PersistableType.Type.self)
         }
-        
     }
     
     public func exists<T>(_ item: T) -> Bool where T : PersistableType {
@@ -190,6 +189,25 @@ open class CodablePersistenceStore: CodablePersistenceStoreProtocol {
         let filePath = self.createPathFrom(type: T.self, id: id)
         let bool = Disk.exists(filePath, in: .caches)
         return bool
+    }
+    
+    public func exists<T>(_ item: T!, completion: @escaping (Bool) -> Void) where T : PersistableType {
+        let id = type(of: item).id()
+        let filePath = self.createPathFrom(type: T.self, id: id)
+        let bool = Disk.exists(filePath, in: .caches)
+        completion(bool)
+    }
+    
+    public func exists<T>(_ identifier: String, type: T.Type) -> Bool where T : PersistableType {
+        let filePath = self.createPathFrom(type: type, id: identifier)
+        let bool = Disk.exists(filePath, in: .caches)
+        return bool
+    }
+    
+    public func exists<T>(_ identifier: String, type: T.Type, completion: @escaping (Bool) -> Void) where T : PersistableType {
+        let filePath = self.createPathFrom(type: type, id: identifier)
+        let bool = Disk.exists(filePath, in: .caches)
+        completion(bool)
     }
     
     public func cacheClear() throws {

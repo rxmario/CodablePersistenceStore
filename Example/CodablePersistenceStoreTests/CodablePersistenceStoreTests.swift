@@ -29,7 +29,7 @@ class CodablePersistenceStoreTests: XCTestCase {
     let messages: [Message] = {
         var array = [Message]()
         for i in 1...10 {
-            let element = Message(title: "Message \(i)", body: "...")
+            let element = Message(idz: "\(i)", title: "Message \(i)", body: "...")
             array.append(element)
         }
         return array
@@ -294,6 +294,109 @@ class CodablePersistenceStoreTests: XCTestCase {
     }
     
     // =============================================================================//
+    //                             EXISTS TESTS                                     //
+    // =============================================================================//
+    
+    func testExistWithItemProvided() {
+        
+        let item = messages[0]
+        
+        XCTAssertNoThrow(try self.persistenceStore.persist(item))
+        
+        let isThere = self.persistenceStore.exists(item)
+        
+        XCTAssertTrue(isThere)
+        
+    }
+    
+    func testExistsWithItemAndCompletion() {
+        
+        let item = messages[0]
+        let exp = expectation(description: "Item is in store.")
+        
+        XCTAssertNoThrow(try self.persistenceStore.persist(item))
+        
+        self.persistenceStore.exists(item) { (isThere) in
+            XCTAssertTrue(isThere)
+            exp.fulfill()
+        }
+        
+        waitForExpectations(timeout: 5, handler: nil)
+        
+    }
+    
+    func testExistsWithIdentifierAndType() {
+        
+        let item = messages[0]
+        
+        XCTAssertNoThrow(try self.persistenceStore.persist(item))
+        
+        let isThere = self.persistenceStore.exists("hey", type: Message.self)
+        
+        XCTAssertTrue(isThere)
+        
+    }
+    
+    func testExistsWithIdentifierAndTypeAndCompletion() {
+        
+        let item = messages[0]
+        let exp = expectation(description: "Item is in store.")
+        
+        XCTAssertNoThrow(try self.persistenceStore.persist(item))
+        
+        self.persistenceStore.exists("hey", type: Message.self) { (isThere) in
+            XCTAssertTrue(isThere)
+            exp.fulfill()
+        }
+        
+        waitForExpectations(timeout: 5, handler: nil)
+        
+    }
+    
+    // =============================================================================//
+    //                             FILTER TESTS                                     //
+    // =============================================================================//
+    
+    func testFilter() {
+        
+        let firstItem = Message(idz: "10", title: "yo", body: "yo")
+        let secondItem = Message(idz: "11", title: "yoyo", body: "yoyoyo")
+        
+        XCTAssertNoThrow(try self.persistenceStore.persist(firstItem))
+        XCTAssertNoThrow(try self.persistenceStore.persist(secondItem))
+        
+        do {
+            let itemWithId10 = try self.persistenceStore.filter(Message.self, includeElement: { (item: Message) -> Bool in
+                return item.idz == "10"
+            }).first
+            XCTAssertNotNil(itemWithId10)
+        } catch let error as NSError {
+            XCTFail(error.localizedDescription)
+        }
+    }
+    
+    func testAsyncFilter() {
+        
+        let firstItem = Message(idz: "10", title: "yo", body: "yo")
+        let secondItem = Message(idz: "11", title: "yoyo", body: "yoyoyo")
+        
+        XCTAssertNoThrow(try self.persistenceStore.persist(firstItem))
+        XCTAssertNoThrow(try self.persistenceStore.persist(secondItem))
+        
+        do {
+            try self.persistenceStore.filter(Message.self, includeElement: { (Item: Message) -> Bool in
+                return Item.idz == "10"
+            }, completion: { (items) in
+                XCTAssertNotNil(items)
+                XCTAssertEqual(firstItem, items[0])
+            })
+        } catch let error as NSError {
+            XCTFail(error.localizedDescription)
+        }
+        
+    }
+    
+    // =============================================================================//
     //                             ERROR TESTS                                      //
     // =============================================================================//
     
@@ -320,8 +423,13 @@ class CodablePersistenceStoreTests: XCTestCase {
         XCTAssertThrowsError(try self.persistenceStore.delete("yo", type: Message.self, completion: {}))
         
         
-        //                              CACHE CLEAR ERROR                               //
+        //                              FILTER ERRORS                                   //
         //==============================================================================//
         
+        XCTAssertThrowsError(try self.persistenceStore.filter(Message.self, includeElement: {(Item: Message) -> Bool in return Item.idz == "10" }, completion: { (items) in
+            XCTAssertNil(items)
+        }))
+        
+        XCTAssertThrowsError(try self.persistenceStore.filter(Message.self, includeElement: { (item: Message) -> Bool in return item.idz == "10" }))
     }
 }

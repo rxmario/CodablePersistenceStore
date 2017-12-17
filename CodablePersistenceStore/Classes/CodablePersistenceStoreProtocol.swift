@@ -73,9 +73,9 @@ public protocol CodablePersistenceStoreProtocol {
 //    func getAll<T>(_ viewName:String,groupName:String, completion: @escaping (_ items: [T]) -> Void) throws
 //
     func exists<T: PersistableType>(_ item : T) -> Bool
-//    func exists(_ item : Any!, completion: @escaping (_ exists: Bool) -> Void) throws
-//    func exists(_ identifier : String,type : Any.Type) throws -> Bool
-//    func exists(_ identifier : String,type : Any.Type,  completion: @escaping (_ exists: Bool) -> Void) throws
+    func exists<T: PersistableType>(_ item : T!, completion: @escaping (_ exists: Bool) -> Void)
+    func exists<T: PersistableType>(_ identifier : String,type : T.Type) -> Bool
+    func exists<T: PersistableType>(_ identifier : String,type : T.Type,  completion: @escaping (_ exists: Bool) -> Void) 
 //
     func filter<T: PersistableType>(_ type: T.Type, includeElement: @escaping (T) -> Bool) throws -> [T]
     func filter<T: PersistableType>(_ type: T.Type, includeElement: @escaping (T) -> Bool, completion: @escaping (_ items: [T]) -> Void) throws
