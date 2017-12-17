@@ -29,6 +29,26 @@ struct Message: PersistableType {
     
 }
 
+struct FailMessage: PersistableType {
+    
+    let title: String
+    let body: String
+    
+    enum CodingKeys: String, CodingKey {
+        case title
+        case body
+    }
+    
+    static func id() -> String {
+        return ".json.json.json"
+    }
+    
+    static func path() -> String {
+        return ".json.json.json"
+    }
+    
+}
+
 // Conforms to Equatable so we can compare messages (i.e. message1 == message2)
 extension Message: Equatable {
     static func == (lhs: Message, rhs: Message) -> Bool {
