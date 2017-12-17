@@ -14,18 +14,10 @@ struct Message: PersistableType {
     let title: String
     let body: String
     
-    enum CodingKeys: String, CodingKey {
-        case title
-        case body
-    }
-    
    static func id() -> String {
         return "hey"
     }
     
-    static func path() -> String {
-        return "Yo"
-    }
     
 }
 
@@ -43,9 +35,7 @@ struct FailMessage: PersistableType {
         return ".json.json.json"
     }
     
-    static func path() -> String {
-        return ".json.json.json"
-    }
+
     
 }
 
