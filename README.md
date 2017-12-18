@@ -1,9 +1,3 @@
-
-[![CI Status](http://img.shields.io/travis/Mario Zimmermann/CodablePersistenceStore.svg?style=flat)](https://travis-ci.org/Mario Zimmermann/CodablePersistenceStore)
-[![Version](https://img.shields.io/cocoapods/v/CodablePersistenceStore.svg?style=flat)](http://cocoapods.org/pods/CodablePersistenceStore)
-[![License](https://img.shields.io/cocoapods/l/CodablePersistenceStore.svg?style=flat)](http://cocoapods.org/pods/CodablePersistenceStore)
-[![Platform](https://img.shields.io/cocoapods/p/CodablePersistenceStore.svg?style=flat)](http://cocoapods.org/pods/CodablePersistenceStore)
-
 Codable Persistence Store
 ===================
 
