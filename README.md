@@ -2,8 +2,8 @@
 ## Foreword 
 The CodeablePersistenceStore is basically a [Disk](https://github.com/saoudrizwan/Disk) wrapper. It makes our lives easier while working with the new **Codable Protocol** which was introduced in Swift 4.
 
-- [Compatibility](##compatibility)
-- [Usage](##usage)
+- [Compatibility](#compatibility)
+- [Usage](#usage)
 - [Requirements](#requirements)
 - [Migration Guides](#migration-guides)
 - [Communication](#communication)
@@ -32,7 +32,7 @@ The usage is pretty straight forward. All you have to do is to let a model imple
 	   }
 	}
 
-###Persist
+### Persist
 
 To actually persist data all you have to do is create an object from your model and put it into the persist method. There are currently two types of persist methods. The first one is synchronous, the second one is asynchronous.
 	
