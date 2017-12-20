@@ -4,7 +4,9 @@ The CodeablePersistenceStore is basically a [Disk](https://github.com/saoudrizwa
 
 - [Compatibility](##compatibility)
 - [Usage](##usage)
-	- [Model](##example_model)
+	- [Model](#model)
+	- [Persist](#persist)
+	- [Retrieve](#retrieve)
 - [Communication](#communication)
 - [Installation](#installation)
 - [Motivation](#motivation)
@@ -18,7 +20,7 @@ The CodablePersistenceStore requires **iOS 9+** and is compatible with **Swift 4
 
 The usage is pretty straight forward. All you have to do is to let a model implement the Persistable Type Protocol which comes down with the CodablePersistenceStore import.
 
-### Example Model
+### Model
 
     import CodablePersistenceStore
 
