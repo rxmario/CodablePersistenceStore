@@ -2,18 +2,21 @@ PODS:
   - CodablePersistenceStore (0.1.0):
     - Disk (~> 0.3.3)
   - Disk (0.3.3)
+  - Nimble (7.0.3)
 
 DEPENDENCIES:
   - CodablePersistenceStore (from `../`)
+  - Nimble (~> 7.0.0)
 
 EXTERNAL SOURCES:
   CodablePersistenceStore:
     :path: ../
 
 SPEC CHECKSUMS:
-  CodablePersistenceStore: 017e992ff7917acc6e4e213a33436626b98ade70
+  CodablePersistenceStore: f713b051ebf6e84021a585287f10bed22f663396
   Disk: d1f55cd61f6ca20f368232d0c6e37e3c3dfcb63e
+  Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
 
-PODFILE CHECKSUM: 9efa8e43d2811a2bb2acabeee1e9440c443b4e0e
+PODFILE CHECKSUM: f290091a98c22e474344555083f4fea78e9e7e8a
 
 COCOAPODS: 1.3.1

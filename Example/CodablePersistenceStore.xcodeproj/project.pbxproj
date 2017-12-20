@@ -44,6 +44,7 @@
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		6B8F23D01FBED6CB00050453 /* CodablePersistenceStore */ = {isa = PBXFileReference; lastKnownFileType = folder; name = CodablePersistenceStore; path = ../CodablePersistenceStore; sourceTree = "<group>"; };
 		6B8F23D31FBED70800050453 /* Disk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Disk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B9B4EAB1FEA715200675E59 /* Nimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BE0B47F1FBEC92C00C0AE35 /* CodablePersistenceStoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodablePersistenceStoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BE0B4811FBEC92C00C0AE35 /* CodablePersistenceStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodablePersistenceStoreTests.swift; sourceTree = "<group>"; };
 		6BE0B4831FBEC92C00C0AE35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -79,6 +80,7 @@
 		341215136F6AE3F03DC50DE4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6B9B4EAB1FEA715200675E59 /* Nimble.framework */,
 				6B8F23D31FBED70800050453 /* Disk.framework */,
 				6B8F23D01FBED6CB00050453 /* CodablePersistenceStore */,
 				5083BE993A4C7E798D816297 /* Pods_CodablePersistenceStore_Example.framework */,
@@ -310,11 +312,13 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-CodablePersistenceStoreTests/Pods-CodablePersistenceStoreTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/CodablePersistenceStore/CodablePersistenceStore.framework",
 				"${BUILT_PRODUCTS_DIR}/Disk/Disk.framework",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CodablePersistenceStore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Disk.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

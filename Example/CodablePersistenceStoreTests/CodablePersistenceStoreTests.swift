@@ -8,6 +8,7 @@
 
 import XCTest
 import CodablePersistenceStore
+import Nimble
 
 class CodablePersistenceStoreTests: XCTestCase {
     
@@ -43,11 +44,11 @@ class CodablePersistenceStoreTests: XCTestCase {
     
        let isResponsible = self.persistenceStore.isResponsible(for: messages[0])
     
-        XCTAssertTrue(isResponsible)
+        expect(isResponsible).to(beTrue())
         
         let isResponsibleType = self.persistenceStore.isResponsible(forType: Message.self)
         
-        XCTAssertTrue(isResponsibleType)
+        expect(isResponsibleType).to(beTrue())
         
     }
     
@@ -105,12 +106,15 @@ class CodablePersistenceStoreTests: XCTestCase {
     func testRetrieveDataWithOneNormalEntry() {
         
         let exp = expectation(description: "item received")
-        XCTAssertNoThrow(try self.persistenceStore.persist(messages[0]))
+
+        expect { try self.persistenceStore.persist(self.messages[0])}.toNot(throwError(errorType: CodablePersistenceStoreErrors.self))
         
         do {
             let data = try self.persistenceStore.get("hey", type: Message.self)
-            XCTAssertEqual(data?.body, messages[0].body)
-            XCTAssertEqual(data?.title, messages[0].title)
+            
+            expect(data?.body).to(match(messages[0].body), description: "Should match")
+            expect(data?.title).to(match(messages[0].title), description: "Should match")
+            
             exp.fulfill()
         } catch let error as NSError {
             XCTFail(error.localizedDescription)
@@ -129,7 +133,8 @@ class CodablePersistenceStoreTests: XCTestCase {
         
         do {
             try self.persistenceStore.get("hey", type: Message.self, completion: { (message) in
-                XCTAssertEqual(expectedMessage, message, "Should be equal")
+                expect(expectedMessage).to(equal(message))
+                expect(message).to(beAKindOf(Message.self))
                 exp.fulfill()
             })
         } catch let error as NSError {
@@ -154,7 +159,15 @@ class CodablePersistenceStoreTests: XCTestCase {
         
         do {
             try self.persistenceStore.getAll(Message.self, completion: { (msgs) in
-                XCTAssertEqual(msgs[0], expectedMessage0)
+
+                expect(expectedMessage0).to(equal(msgs[0]))
+                expect(expectedMessage1).to(equal(msgs[1]))
+                expect(expectedMessage2).to(equal(msgs[2]))
+                
+                expect(msgs[0]).to(beAKindOf(Message.self))
+                expect(msgs[1]).to(beAKindOf(Message.self))
+                expect(msgs[2]).to(beAKindOf(Message.self))
+                
                 exp.fulfill()
             })
         } catch let e as NSError {
@@ -175,22 +188,29 @@ class CodablePersistenceStoreTests: XCTestCase {
         let exp0 = expectation(description: "data persisted")
         let exp1 = expectation(description: "data received")
         do {
+            
             try self.persistenceStore.persist(expectedMessage0)
             try self.persistenceStore.persist(expectedMessage1)
             try self.persistenceStore.persist(expectedMessage2)
+            
             exp0.fulfill()
+            
         } catch let error as NSError {
             XCTFail(error.localizedDescription)
         }
         
         do {
             let messagez = try self.persistenceStore.getAll(Message.self)
-            XCTAssertEqual(messagez[0], expectedMessage0)
-            XCTAssertEqual(messagez[1], expectedMessage1)
-            XCTAssertEqual(messagez[2], expectedMessage2)
+            
+            expect(messagez[0]).to(equal(expectedMessage0))
+            expect(messagez[1]).to(equal(expectedMessage1))
+            expect(messagez[2]).to(equal(expectedMessage2))
+            
             exp1.fulfill()
         } catch let error as NSError {
+            
             XCTFail(error.localizedDescription)
+            
         }
         
         
@@ -213,7 +233,7 @@ class CodablePersistenceStoreTests: XCTestCase {
         })
         
         let exists = self.persistenceStore.exists(messages[0])
-        XCTAssertFalse(exists)
+        expect(exists).to(beFalse())
         
         waitForExpectations(timeout: 5, handler: nil)
         
@@ -232,8 +252,8 @@ class CodablePersistenceStoreTests: XCTestCase {
             XCTFail(error.localizedDescription)
         }
         
-        let isDeleted = self.persistenceStore.exists(messageToDelete)
-        XCTAssertFalse(isDeleted)
+        let isStillInStore = self.persistenceStore.exists(messageToDelete)
+        expect(isStillInStore).to(beFalse())
     }
     
     func testDeleteWithItemOnlyAndCompletion() {
@@ -245,8 +265,8 @@ class CodablePersistenceStoreTests: XCTestCase {
         
         do {
             try self.persistenceStore.delete(messageToDelete, completion: {
-                let isDeleted = self.persistenceStore.exists(messageToDelete)
-                XCTAssertFalse(isDeleted)
+                let isStillInStore = self.persistenceStore.exists(messageToDelete)
+                expect(isStillInStore).to(beFalse())
                 exp.fulfill()
             })
         } catch let error as NSError {
@@ -265,8 +285,8 @@ class CodablePersistenceStoreTests: XCTestCase {
         
         do {
             try self.persistenceStore.delete("hey", type: Message.self)
-            let isDeleted = self.persistenceStore.exists(messageToDelete)
-            XCTAssertFalse(isDeleted)
+            let isStillInStore = self.persistenceStore.exists(messageToDelete)
+            expect(isStillInStore).to(beFalse())
         } catch let error as NSError {
             XCTFail(error.localizedDescription)
         }
@@ -281,8 +301,8 @@ class CodablePersistenceStoreTests: XCTestCase {
         
         do {
             try self.persistenceStore.delete("hey", type: Message.self, completion: {
-                let isDeleted = self.persistenceStore.exists(messageToDelete)
-                XCTAssertFalse(isDeleted)
+                let isStillInStore = self.persistenceStore.exists(messageToDelete)
+                expect(isStillInStore).to(beFalse())
                 exp.fulfill()
             })
         } catch let error as NSError {
@@ -305,7 +325,7 @@ class CodablePersistenceStoreTests: XCTestCase {
         
         let isThere = self.persistenceStore.exists(item)
         
-        XCTAssertTrue(isThere)
+        expect(isThere).to(beTrue())
         
     }
     
@@ -317,7 +337,7 @@ class CodablePersistenceStoreTests: XCTestCase {
         XCTAssertNoThrow(try self.persistenceStore.persist(item))
         
         self.persistenceStore.exists(item) { (isThere) in
-            XCTAssertTrue(isThere)
+            expect(isThere).to(beTrue())
             exp.fulfill()
         }
         
@@ -333,7 +353,7 @@ class CodablePersistenceStoreTests: XCTestCase {
         
         let isThere = self.persistenceStore.exists("hey", type: Message.self)
         
-        XCTAssertTrue(isThere)
+        expect(isThere).to(beTrue())
         
     }
     
@@ -345,7 +365,7 @@ class CodablePersistenceStoreTests: XCTestCase {
         XCTAssertNoThrow(try self.persistenceStore.persist(item))
         
         self.persistenceStore.exists("hey", type: Message.self) { (isThere) in
-            XCTAssertTrue(isThere)
+            expect(isThere).to(beTrue())
             exp.fulfill()
         }
         
@@ -369,7 +389,7 @@ class CodablePersistenceStoreTests: XCTestCase {
             let itemWithId10 = try self.persistenceStore.filter(Message.self, includeElement: { (item: Message) -> Bool in
                 return item.idz == "10"
             }).first
-            XCTAssertNotNil(itemWithId10)
+            expect(itemWithId10).toNot(beNil())
         } catch let error as NSError {
             XCTFail(error.localizedDescription)
         }
@@ -387,15 +407,17 @@ class CodablePersistenceStoreTests: XCTestCase {
             try self.persistenceStore.filter(Message.self, includeElement: { (Item: Message) -> Bool in
                 return Item.idz == "10"
             }, completion: { (items) in
-                XCTAssertNotNil(items)
-                XCTAssertEqual(firstItem, items[0])
+                
+                expect(items).toNot(beNil())
+                expect(firstItem).to(equal(items[0]))
+                
             })
         } catch let error as NSError {
             XCTFail(error.localizedDescription)
         }
         
     }
-    
+
     // =============================================================================//
     //                             ERROR TESTS                                      //
     // =============================================================================//
@@ -405,11 +427,11 @@ class CodablePersistenceStoreTests: XCTestCase {
         
         //                              GET ERRORS                                      //
         //==============================================================================//
-        
-        XCTAssertThrowsError(try self.persistenceStore.get("yoyo", type: Message.self))
-        XCTAssertThrowsError(try self.persistenceStore.getAll(Message.self))
-        XCTAssertThrowsError(try self.persistenceStore.get("id", type: Message.self, completion: { (msg) in XCTAssertNil(msg) }))
-        XCTAssertThrowsError(try self.persistenceStore.getAll(Message.self, completion: { (msgs) in XCTAssertNil(msgs) }))
+    
+        expect { try self.persistenceStore.get("yoyo", type: Message.self) }.to(throwError(errorType: CodablePersistenceStoreErrors.self))
+        expect { try self.persistenceStore.getAll(Message.self) }.to(throwError(errorType: CodablePersistenceStoreErrors.self))
+        expect { try self.persistenceStore.get("yo", type: Message.self, completion: { (_) in }) }.to(throwError(errorType: CodablePersistenceStoreErrors.self))
+        expect { try self.persistenceStore.getAll(Message.self, completion: { (_) in }) }.to(throwError(errorType: CodablePersistenceStoreErrors.self))
         
         //==============================================================================//
 
@@ -417,19 +439,19 @@ class CodablePersistenceStoreTests: XCTestCase {
         //                              DELETE ERRORS                                   //
         //==============================================================================//
 
-        XCTAssertThrowsError(try self.persistenceStore.delete(messages[0]))
-        XCTAssertThrowsError(try self.persistenceStore.delete("yo", type: Message.self))
-        XCTAssertThrowsError(try self.persistenceStore.delete(messages[0], completion: {}))
-        XCTAssertThrowsError(try self.persistenceStore.delete("yo", type: Message.self, completion: {}))
-        
+        expect { try self.persistenceStore.delete(self.messages[0]) }.to(throwError(errorType: CodablePersistenceStoreErrors.self))
+        expect { try self.persistenceStore.delete("yo", type: Message.self) }.to(throwError(errorType: CodablePersistenceStoreErrors.self))
+        expect { try self.persistenceStore.delete(self.messages[0], completion: {})}.to(throwError(errorType: CodablePersistenceStoreErrors.self))
+        expect { try self.persistenceStore.delete("yo", type: Message.self, completion: {})}.to(throwError(errorType: CodablePersistenceStoreErrors.self))
         
         //                              FILTER ERRORS                                   //
         //==============================================================================//
         
-        XCTAssertThrowsError(try self.persistenceStore.filter(Message.self, includeElement: {(Item: Message) -> Bool in return Item.idz == "10" }, completion: { (items) in
-            XCTAssertNil(items)
-        }))
         
-        XCTAssertThrowsError(try self.persistenceStore.filter(Message.self, includeElement: { (item: Message) -> Bool in return item.idz == "10" }))
+        expect { try self.persistenceStore.filter(Message.self, includeElement: { (item: Message) -> Bool in return item.idz == "10" })}.to(throwError(errorType: CodablePersistenceStoreErrors.self))
+        
+        expect { try self.persistenceStore.filter(Message.self, includeElement: { (item: Message) -> Bool in return item.idz == "10" }, completion: { (_)  in })}.to(throwError(errorType: CodablePersistenceStoreErrors.self))
+        
+        
     }
 }

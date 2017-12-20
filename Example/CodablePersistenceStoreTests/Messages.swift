@@ -33,7 +33,7 @@ struct FailMessage: PersistableType {
     }
     
     static func id() -> String {
-        return ".json.json.json"
+        return "<~~~~~~>"
     }
     
 

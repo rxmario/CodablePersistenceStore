@@ -1,7 +1,7 @@
 {
   "name": "CodablePersistenceStore",
   "version": "0.1.0",
-  "summary": "A short description of CodablePersistenceStore.",
+  "summary": "A Disk wrapper which makes your live easier while working with the new Codable Protocol.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/Mario Zimmermann/CodablePersistenceStore",
   "license": {
@@ -9,14 +9,14 @@
     "file": "LICENSE"
   },
   "authors": {
-    "Mario Zimmermann": "mario.zimmermann@atino.de"
+    "Mario Zimmermann": "info@mario-zmmrmnn.de"
   },
   "source": {
     "git": "https://github.com/Mario Zimmermann/CodablePersistenceStore.git",
     "tag": "0.1.0"
   },
   "platforms": {
-    "ios": "10.0"
+    "ios": "9.0"
   },
   "source_files": "CodablePersistenceStore/Classes/**/*",
   "dependencies": {

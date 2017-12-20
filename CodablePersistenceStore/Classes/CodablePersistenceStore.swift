@@ -34,6 +34,7 @@ open class CodablePersistenceStore: CodablePersistenceStoreProtocol {
         
         let id = type(of: item).id()
         let filePath = self.createPathFrom(type: T.self, id: id)
+        print(filePath)
         
         do {
             if self.exists(item) {
