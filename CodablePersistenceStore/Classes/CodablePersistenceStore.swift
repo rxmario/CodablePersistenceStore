@@ -14,22 +14,39 @@ public typealias PersistableType = Codable & CanBePersistedProtocol
 
 open class CodablePersistenceStore: CodablePersistenceStoreProtocol {
 
-    var prefix: String?
+    var rootName: String?
     
-    public init(prefix: String){
-        self.prefix = prefix
+    /// Creates a default root folder.
+    public init() {}
+    
+    /// Use this initializer if you want to create your own root folder.
+    ///
+    /// - Parameter prefix: The name of your root folder.
+    public init(rootName: String?){
+        self.rootName = rootName
     }
     
+    /// Use this method to check if the provided object is persistable.
+    ///
+    /// - Parameter object: Any Object you'd like to check.
+    /// - Returns: Boolean
     public func isResponsible(for object: Any) -> Bool {
         return object is PersistableType
     }
     
+    /// Use this method to check if the provided type is persistable.
+    ///
+    /// - Parameter type: Any Type you'd like to check
+    /// - Returns: Boolean
     public func isResponsible(forType type: Any.Type) -> Bool {
         let result = type.self is PersistableType.Type
         return result
     }
     
-    
+    /// Use this method to persist your desired item.
+    ///
+    /// - Parameter item: Any Item which implements the PersistableType Protocol.
+    /// - Throws: An Error containing the localized description, localized failure reason and localized suggestions.
     public func persist<T>(_ item: T!) throws where T : PersistableType {
         
         let id = type(of: item).id()
@@ -47,6 +64,12 @@ open class CodablePersistenceStore: CodablePersistenceStoreProtocol {
         }
     }
     
+    /// Use this method to persist your desired item.
+    ///
+    /// - Parameters:
+    ///   - item: Any Item which implements the PersistableType Protocol.
+    ///   - completion: Just a closure to do things afterwards.
+    /// - Throws: An Error containing the localized description, localized failure reason and localized suggestions.
     public func persist<T>(_ item: T!, completion: @escaping () -> ()) throws where T : PersistableType {
         
         let id = type(of: item).id()
@@ -65,6 +88,10 @@ open class CodablePersistenceStore: CodablePersistenceStoreProtocol {
         }
     }
     
+    /// Use this method to delete an item.
+    ///
+    /// - Parameter item: Any item which is already in the store.
+    /// - Throws: An Error containing the localized description, localized failure reason and localized suggestions.
     public func delete<T>(_ item: T!) throws where T : PersistableType {
         
         let id = type(of: item).id()
@@ -77,6 +104,12 @@ open class CodablePersistenceStore: CodablePersistenceStoreProtocol {
         }
     }
     
+    /// Use this method to delete an item.
+    ///
+    /// - Parameters:
+    ///   - item: Any item which is already in the store.
+    ///   - completion: Just a closure to do things afterwards.
+    /// - Throws: An Error containing the localized description, localized failure reason and localized suggestions.
     public func delete<T>(_ item: T!, completion: @escaping () -> ()) throws where T : PersistableType {
         
         let id = type(of: item).id()
@@ -90,6 +123,12 @@ open class CodablePersistenceStore: CodablePersistenceStoreProtocol {
         }
     }
     
+    /// Use this method to delete an item.
+    ///
+    /// - Parameters:
+    ///   - identifier: The identifier of your item.
+    ///   - type: Persistable Type
+    /// - Throws: An Error containing the localized description, localized failure reason and localized suggestions.
     public func delete<T>(_ identifier: String, type: T.Type) throws where T : PersistableType {
         
         let filePath = self.createPathFrom(type: type, id: identifier)
@@ -101,6 +140,13 @@ open class CodablePersistenceStore: CodablePersistenceStoreProtocol {
         }
     }
     
+    /// Use this method to delete an item.
+    ///
+    /// - Parameters:
+    ///   - identifier: The identifier of your item.
+    ///   - type: Persistable Type
+    ///   - completion: Just a closure to do things afterwards.
+    /// - Throws: An Error containing the localized description, localized failure reason and localized
     public func delete<T>(_ identifier: String, type: T.Type, completion: @escaping () -> ()) throws where T : PersistableType {
         
         let filePath = self.createPathFrom(type: type, id: identifier)
@@ -234,7 +280,7 @@ open class CodablePersistenceStore: CodablePersistenceStoreProtocol {
     internal func createPathFrom<T>(type: T.Type, id: String?) -> String where T : PersistableType {
         let pathName: String = String(describing: type).lowercased()
         let id = id == nil ? "" : "/\(id!).json"
-        let filePath: String = "\(self.prefix ?? "MZ")/\(pathName)\(id)"
+        let filePath: String = "\(self.rootName ?? "xmari0")/\(pathName)\(id)"
         return filePath
     }
     

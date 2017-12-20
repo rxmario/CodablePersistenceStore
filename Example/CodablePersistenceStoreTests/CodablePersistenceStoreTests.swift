@@ -16,7 +16,7 @@ class CodablePersistenceStoreTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        self.persistenceStore = CodablePersistenceStore(prefix: "xmari0")
+        self.persistenceStore = CodablePersistenceStore()
     }
     
     override func tearDown() {
