@@ -21,7 +21,7 @@ open class CodablePersistenceStore: CodablePersistenceStoreProtocol {
     
     /// Use this initializer if you want to create your own root folder.
     ///
-    /// - Parameter prefix: The name of your root folder.
+    /// - Parameter rootName: The name of your root folder.
     public init(rootName: String?){
         self.rootName = rootName
     }
