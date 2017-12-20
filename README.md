@@ -2,13 +2,13 @@
 ## Foreword 
 The CodeablePersistenceStore is basically a [Disk](https://github.com/saoudrizwan/Disk) wrapper. It makes our lives easier while working with the new **Codable Protocol** which was introduced in Swift 4.
 
-- [Compatibility](#compatibility)
-- [Usage](#usage)
-- [Requirements](#requirements)
-- [Migration Guides](#migration-guides)
+- [Compatibility](##compatibility)
+- [Usage](##usage)
+	- [Model](##example_model)
 - [Communication](#communication)
 - [Installation](#installation)
-- [Usage](Documentation/Usage.md)
+- [Motivation](#motivation)
+- [License](#license)
 
 ## Compatibility
 
@@ -16,9 +16,9 @@ The CodablePersistenceStore requires **iOS 9+** and is compatible with **Swift 4
 
 ## Usage
 
-The usage is pretty straight forward. All you have to do is to let a model implement the Persistable Type Protocol which comes down when you import the CodablePersistenceStore.
+The usage is pretty straight forward. All you have to do is to let a model implement the Persistable Type Protocol which comes down with the CodablePersistenceStore import.
 
-### Model
+### Example Model
 
     import CodablePersistenceStore
 
@@ -32,7 +32,7 @@ The usage is pretty straight forward. All you have to do is to let a model imple
 	   }
 	}
 
-### Persist
+###Persist
 
 To actually persist data all you have to do is create an object from your model and put it into the persist method. There are currently two types of persist methods. The first one is synchronous, the second one is asynchronous.
 	
@@ -63,3 +63,26 @@ If you got tons of messages for example and you want them all you could just cal
 
 
 
+## Motivation
+
+A short description of the motivation behind the creation and maintenance of the project. This should explain **why** the project exists.
+
+## Installation
+
+Provide code examples and explanations of how to get the project.
+
+## API Reference
+
+Depending on the size of the project, if it is small and simple enough the reference docs can be added to the README. For medium size to larger projects it is important to at least provide a link to where the API reference docs live.
+
+## Tests
+
+Describe and show how to run the tests with code examples.
+
+## Contributors
+
+Let people know how they can dive into the project, include important links to things like issue trackers, irc, twitter accounts if applicable.
+
+## License
+
+The CodablePersistenceStore is released under the MIT license.
