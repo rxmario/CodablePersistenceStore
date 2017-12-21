@@ -10,7 +10,7 @@ target 'CodablePersistenceStore_Example' do
     pod 'CodablePersistenceStore', :path => '../'
 
   target 'CodablePersistenceStoreTests' do
-      pod 'Nimble', '~> 7.0.0'
+      pod 'Nimble', '~> 7.0.3'
       pod 'CodablePersistenceStore', :path => '../'
     inherit! :search_paths
 

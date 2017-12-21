@@ -9,17 +9,22 @@
 import Foundation
 import CodablePersistenceStore
 
-struct Message: PersistableType {
-    
-    let idz: String
+class Message: PersistableType {
+
+
+    let id: String
     let title: String
     let body: String
     
-   static func id() -> String {
-        return "hey"
+    init(id: String, title: String, body: String) {
+        self.id = id
+        self.title = title
+        self.body = body
     }
     
-    
+     func identifier() -> String {
+        return self.id
+    }
 }
 
 struct FailMessage: PersistableType {
@@ -32,7 +37,7 @@ struct FailMessage: PersistableType {
         case body
     }
     
-    static func id() -> String {
+     func identifier() -> String {
         return "<~~~~~~>"
     }
     
