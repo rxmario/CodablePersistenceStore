@@ -156,7 +156,7 @@ To clear the whole cache, all you've to do is call:
 
 ## Installation
 
-To integrate Alamofire into your Xcode project using CocoaPods, specify it in your `Podfile`:
+To integrate the CodablePersistenceStore into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
 source 'https://github.com/CocoaPods/Specs.git'
