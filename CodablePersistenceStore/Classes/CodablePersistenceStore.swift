@@ -183,7 +183,6 @@ open class CodablePersistenceStore: CodablePersistenceStoreProtocol {
             
             for item in storedData {
                 let obj = try! jsonDecoder.decode(T.self, from: item)
-                print(obj)
                 _decodedJSON.append(obj)
             }
             return _decodedJSON
