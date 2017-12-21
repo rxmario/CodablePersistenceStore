@@ -1,5 +1,5 @@
 
-![Languages](https://img.shields.io/badge/languages-Swift%203.2-orange.svg)
+![Languages](https://img.shields.io/badge/languages-Swift%204.0-orange.svg)
 ![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-red.svg?style=flat)
 ![Cocoapods compatible](https://img.shields.io/badge/Cocoapods-compatible-green.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
