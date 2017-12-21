@@ -1,4 +1,9 @@
 
+![Languages](https://img.shields.io/badge/languages-Swift%203.2-orange.svg)
+![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-red.svg?style=flat)
+![Cocoapods compatible](https://img.shields.io/badge/Cocoapods-compatible-green.svg)
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+
 ## Foreword 
 The CodeablePersistenceStore is basically a [Disk](https://github.com/saoudrizwan/Disk) wrapper. It makes our lives easier while working with the new **Codable Type**  which was introduced in Swift 4.
 
