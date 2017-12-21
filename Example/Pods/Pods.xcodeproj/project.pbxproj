@@ -1090,6 +1090,38 @@
 			};
 			name = Debug;
 		};
+		4B1BE66C11E6E18FD847F2C48115A28D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A78706BC77B3556C2878320A9883A40 /* CodablePersistenceStore.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/CodablePersistenceStore/CodablePersistenceStore-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CodablePersistenceStore/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/CodablePersistenceStore/CodablePersistenceStore.modulemap";
+				PRODUCT_NAME = CodablePersistenceStore;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		5714010688AA50D24689FD636B918766 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B17451C30BEC88D918583FF286519CD5 /* Disk.xcconfig */;
@@ -1212,38 +1244,6 @@
 			};
 			name = Debug;
 		};
-		90D41456C00199049A43D3B02045672E /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0A78706BC77B3556C2878320A9883A40 /* CodablePersistenceStore.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/CodablePersistenceStore/CodablePersistenceStore-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/CodablePersistenceStore/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/CodablePersistenceStore/CodablePersistenceStore.modulemap";
-				PRODUCT_NAME = CodablePersistenceStore;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		951DD02B72BDF17C5AB47DB693475B85 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B17451C30BEC88D918583FF286519CD5 /* Disk.xcconfig */;
@@ -1310,6 +1310,37 @@
 			};
 			name = Release;
 		};
+		A24059F89863064C68BF07B379614E22 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A78706BC77B3556C2878320A9883A40 /* CodablePersistenceStore.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/CodablePersistenceStore/CodablePersistenceStore-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CodablePersistenceStore/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/CodablePersistenceStore/CodablePersistenceStore.modulemap";
+				PRODUCT_NAME = CodablePersistenceStore;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		C97487E71F33856B4CFBCF8AE54B38F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0E73107915485651558DDAF9E428BE3E /* Pods-CodablePersistenceStore_Example.debug.xcconfig */;
@@ -1344,37 +1375,6 @@
 			};
 			name = Debug;
 		};
-		DB4C469D13CF4517BD539A28BBB6B596 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0A78706BC77B3556C2878320A9883A40 /* CodablePersistenceStore.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/CodablePersistenceStore/CodablePersistenceStore-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/CodablePersistenceStore/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/CodablePersistenceStore/CodablePersistenceStore.modulemap";
-				PRODUCT_NAME = CodablePersistenceStore;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1399,8 +1399,8 @@
 		2FC1F2DD65C42A8DD7A878D3D524C39D /* Build configuration list for PBXNativeTarget "CodablePersistenceStore" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DB4C469D13CF4517BD539A28BBB6B596 /* Debug */,
-				90D41456C00199049A43D3B02045672E /* Release */,
+				A24059F89863064C68BF07B379614E22 /* Debug */,
+				4B1BE66C11E6E18FD847F2C48115A28D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

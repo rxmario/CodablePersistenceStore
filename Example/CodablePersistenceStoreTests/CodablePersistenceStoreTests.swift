@@ -8,6 +8,7 @@
 
 import XCTest
 import Nimble
+
 @testable import CodablePersistenceStore
 
 class CodablePersistenceStoreTests: XCTestCase {
@@ -44,7 +45,7 @@ class CodablePersistenceStoreTests: XCTestCase {
     func testIsResponsable() {
     
        let isResponsible = self.persistenceStore.isResponsible(for: messages[0])
-    
+        
         expect(isResponsible).to(beTrue())
         
         let isResponsibleType = self.persistenceStore.isResponsible(forType: Message.self)
