@@ -1,6 +1,6 @@
 
 ## Foreword 
-The CodeablePersistenceStore is basically a [Disk](https://github.com/saoudrizwan/Disk) wrapper. It makes our lives easier while working with the new **Codable Protocol** which was introduced in Swift 4.
+The CodeablePersistenceStore is basically a [Disk](https://github.com/saoudrizwan/Disk) wrapper. It makes our lives easier while working with the new **Codable Type**  which was introduced in Swift 4.
 
 - [Compatibility](##compatibility)
 - [Usage](##usage)
