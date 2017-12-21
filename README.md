@@ -32,6 +32,7 @@ All of the methods you see in the documentation can throw. So don't forget to ha
 
 ### Model
 
+```swift
     import CodablePersistenceStore
     
 	// Its an example.
