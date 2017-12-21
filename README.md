@@ -10,7 +10,7 @@ The CodeablePersistenceStore is basically a [Disk](https://github.com/saoudrizwa
 	- [Delete](#delete)
 	- [Filter](#filter)
 	- [Exists](#exists)
-	- [Cache clear](#cache)
+	- [Clear](#cache)
 - [Communication](#communication)
 - [Installation](#installation)
 - [Motivation](#motivation)
@@ -149,7 +149,7 @@ More options:
 		
 	})
 
-### Cache ### Clear
+### Clear
 
 To clear the whole cache, all you've to do is call:
 
