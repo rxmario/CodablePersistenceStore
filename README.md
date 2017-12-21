@@ -36,22 +36,23 @@ All of the methods you see in the documentation can throw. So don't forget to ha
     import CodablePersistenceStore
     
 	// Its an example.
-	struct Message: PersistableType {
+    struct Message: PersistableType {
     
     let id: String
     let title: String
     let body: String
 	
-	init(id: String, title: String, body: String) {
-		self.id = id
-		self.title = title
-		self.body = body
-	}
+     init(id: String, title: String, body: String) {
+	   self.id = id
+	   self.title = title
+           self.body = body
+       }
     
-	   func identifier() -> String {
+     func identifier() -> String {
         return self.id
-	   }
-	}
+   }
+}
+```
 
 ### Persist
 
