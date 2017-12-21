@@ -156,7 +156,23 @@ To clear the whole cache, all you've to do is call:
 
 ## Installation
 
-Provide code examples and explanations of how to get the project.
+To integrate Alamofire into your Xcode project using CocoaPods, specify it in your `Podfile`:
+
+```ruby
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '11.0'
+use_frameworks!
+
+target '<Your Target Name>' do
+    pod 'CodablePersistenceStore', '~>1.0.0.alpha'
+end
+```
+
+Then, run the following command:
+
+```bash
+$ pod install
+```
 
 
 ## License
