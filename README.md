@@ -172,7 +172,7 @@ platform :ios, '11.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-    pod 'CodablePersistenceStore', '~>1.0.2.alpha'
+    pod 'CodablePersistenceStore', '~>1.0.3.alpha'
 end
 ```
 
