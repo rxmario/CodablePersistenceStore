@@ -10,10 +10,8 @@ The CodeablePersistenceStore is basically a [Disk](https://github.com/saoudrizwa
 	- [Delete](#delete)
 	- [Filter](#filter)
 	- [Exists](#exists)
-	- [Clear](#cache)
-- [Communication](#communication)
+	- [Clear](#clear)
 - [Installation](#installation)
-- [Motivation](#motivation)
 - [License](#license)
 
 ## Compatibility
