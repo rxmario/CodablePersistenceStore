@@ -1,15 +1,8 @@
-#
-# Be sure to run `pod lib lint CodablePersistenceStore.podspec' to ensure this is a
-# valid spec before submitting.
-#
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
-#
 
 Pod::Spec.new do |s|
   s.name             = 'CodablePersistenceStore'
-  s.version          = '0.1.0'
-  s.summary          = 'A Disk wrapper which makes your live easier while working with the new Codable Protocol.'
+  s.version          = '1.0.1.alpha'
+  s.summary          = 'A Disk wrapper which makes your live easier while working with Codable structs.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -26,7 +19,7 @@ TODO: Add long description of the pod here.
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Mario Zimmermann' => 'info@mario-zmmrmnn.de' }
   s.source           = { :git => 'https://github.com/Mario Zimmermann/CodablePersistenceStore.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  # s.social_media_url = 'https://www.instagram.com/xmari0_ios/'
 
   s.ios.deployment_target = '11.0'
 
