@@ -9,7 +9,7 @@ import Foundation
 
 public protocol CanBePersistedProtocol: CanBeIdentifiedProtocol, Codable {}
 
-public extension CanBePersistedProtocol {
+extension CanBePersistedProtocol {
     static func ==(lhs:Self, rhs:Self) -> Bool {
         return lhs.identifier() == rhs.identifier()
     }

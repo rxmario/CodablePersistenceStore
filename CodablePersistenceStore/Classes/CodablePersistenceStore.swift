@@ -52,7 +52,7 @@ open class CodablePersistenceStore: CodablePersistenceStoreProtocol {
         print(filePath)
         
         do {
-            try Disk.save(item, to: .caches, as: filePath)
+            try Disk.save(item, to: .applicationSupport, as: filePath)
         } catch let error as NSError {
             throw CodablePersistenceStoreErrors.CannotUseProvidedItem(item: item, includedError: error)
         }
@@ -70,7 +70,7 @@ open class CodablePersistenceStore: CodablePersistenceStoreProtocol {
         let filePath = self.createPathFrom(type: T.self, id: id)
         
         do {
-            try Disk.save(item, to: .caches, as: filePath)
+            try Disk.save(item, to: .applicationSupport, as: filePath)
         } catch let error as NSError {
             throw CodablePersistenceStoreErrors.CannotUseProvidedItem(item: item, includedError: error)
         }
@@ -86,7 +86,7 @@ open class CodablePersistenceStore: CodablePersistenceStoreProtocol {
         let filePath = self.createPathFrom(type: T.self, id: id)
         
         do {
-            try Disk.remove(filePath, from: .caches)
+            try Disk.remove(filePath, from: .applicationSupport)
         } catch let error as NSError {
            throw CodablePersistenceStoreErrors.CouldntFindItemForId(id: id, error: error)
         }
@@ -104,7 +104,7 @@ open class CodablePersistenceStore: CodablePersistenceStoreProtocol {
         let filePath = self.createPathFrom(type: T.self, id: id)
         
         do {
-            try Disk.remove(filePath, from: .caches)
+            try Disk.remove(filePath, from: .applicationSupport)
             completion()
         } catch let error as NSError {
             throw CodablePersistenceStoreErrors.CouldntFindItemForId(id: id, error: error)
@@ -122,7 +122,7 @@ open class CodablePersistenceStore: CodablePersistenceStoreProtocol {
         let filePath = self.createPathFrom(type: type, id: identifier)
         
         do {
-            try Disk.remove(filePath, from: .caches)
+            try Disk.remove(filePath, from: .applicationSupport)
         } catch let error as NSError {
             throw CodablePersistenceStoreErrors.CouldntFindItemForId(id: identifier, error: error)
         }
@@ -140,7 +140,7 @@ open class CodablePersistenceStore: CodablePersistenceStoreProtocol {
         let filePath = self.createPathFrom(type: type, id: identifier)
         
         do {
-            try Disk.remove(filePath, from: .caches)
+            try Disk.remove(filePath, from: .applicationSupport)
             completion()
         } catch let error as NSError {
             throw CodablePersistenceStoreErrors.CouldntFindItemForId(id: identifier, error: error)
@@ -152,7 +152,7 @@ open class CodablePersistenceStore: CodablePersistenceStoreProtocol {
         let finalPath = self.createPathFrom(type: type, id: identifier)
         
         do {
-            let unarchivedData = try Disk.retrieve(finalPath, from: .caches, as: type.self)
+            let unarchivedData = try Disk.retrieve(finalPath, from: .applicationSupport, as: type.self)
             return unarchivedData
         } catch let error as NSError {
            throw CodablePersistenceStoreErrors.CouldntFindItemForId(id: identifier, error: error)
@@ -164,7 +164,7 @@ open class CodablePersistenceStore: CodablePersistenceStoreProtocol {
         let filePath = self.createPathFrom(type: type, id: identifier)
         
         do {
-            let storedData = try Disk.retrieve(filePath, from: .caches, as: type.self)
+            let storedData = try Disk.retrieve(filePath, from: .applicationSupport, as: type.self)
             completion(storedData)
         } catch let error as NSError {
             throw CodablePersistenceStoreErrors.CouldntFindItemForId(id: identifier, error: error)
@@ -179,7 +179,7 @@ open class CodablePersistenceStore: CodablePersistenceStoreProtocol {
         var _decodedJSON: [T] = [T]()
         
         do {
-            let storedData = try Disk.retrieve(finalPath, from: .caches, as: [Data].self)
+            let storedData = try Disk.retrieve(finalPath, from: .applicationSupport, as: [Data].self)
             
             for item in storedData {
                 let obj = try! jsonDecoder.decode(T.self, from: item)
@@ -199,7 +199,7 @@ open class CodablePersistenceStore: CodablePersistenceStoreProtocol {
         var _decodedJSON: [T] = [T]()
         
         do {
-            let storedData = try Disk.retrieve(finalPath, from: .caches, as: [Data].self)
+            let storedData = try Disk.retrieve(finalPath, from: .applicationSupport, as: [Data].self)
             
             for item in storedData {
                 let obj = try! jsonDecoder.decode(T.self, from: item)
@@ -237,32 +237,32 @@ open class CodablePersistenceStore: CodablePersistenceStoreProtocol {
     public func exists<T>(_ item: T) -> Bool where T : PersistableType {
         let id = item.identifier()
         let filePath = self.createPathFrom(type: T.self, id: id)
-        let bool = Disk.exists(filePath, in: .caches)
+        let bool = Disk.exists(filePath, in: .applicationSupport)
         return bool
     }
     
     public func exists<T>(_ item: T!, completion: @escaping (Bool) -> Void) where T : PersistableType {
         let id = item.identifier()
         let filePath = self.createPathFrom(type: T.self, id: id)
-        let bool = Disk.exists(filePath, in: .caches)
+        let bool = Disk.exists(filePath, in: .applicationSupport)
         completion(bool)
     }
     
     public func exists<T>(_ identifier: String, type: T.Type) -> Bool where T : PersistableType {
         let filePath = self.createPathFrom(type: type, id: identifier)
-        let bool = Disk.exists(filePath, in: .caches)
+        let bool = Disk.exists(filePath, in: .applicationSupport)
         return bool
     }
     
     public func exists<T>(_ identifier: String, type: T.Type, completion: @escaping (Bool) -> Void) where T : PersistableType {
         let filePath = self.createPathFrom(type: type, id: identifier)
-        let bool = Disk.exists(filePath, in: .caches)
+        let bool = Disk.exists(filePath, in: .applicationSupport)
         completion(bool)
     }
     
     public func cacheClear() throws {
         do {
-            try Disk.clear(.caches)
+            try Disk.clear(.applicationSupport)
         } catch let error as NSError {
             CodablePersistenceStoreErrors.CouldntClearCache(error: error)
         }
