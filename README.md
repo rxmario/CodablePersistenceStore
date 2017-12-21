@@ -149,7 +149,7 @@ More options:
 		
 	})
 
-### Cache clear
+### Cache ### Clear
 
 To clear the whole cache, all you've to do is call:
 
