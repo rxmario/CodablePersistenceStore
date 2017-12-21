@@ -22,6 +22,9 @@ The CodablePersistenceStore requires **iOS 9+** and is compatible with **Swift 4
 
 The usage is pretty straight forward. All you have to do is to let a model implement the Persistable Type Protocol which comes down with the CodablePersistenceStore import.
 
+**Important!!!**
+All of the methods you see in the documentation can throw. So don't forget to handle exceptions.
+
 ### Model
 
     import CodablePersistenceStore
