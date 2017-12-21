@@ -182,6 +182,9 @@ Then, run the following command:
 $ pod install
 ```
 
+## Author
+
+Mario Zimmermann, info@mario-zmmrmnn.de
 
 ## License
 
