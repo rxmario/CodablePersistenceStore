@@ -1,5 +1,5 @@
 PODS:
-  - CodablePersistenceStore (1.0.1.alpha):
+  - CodablePersistenceStore (1.0.6.alpha):
     - Disk (~> 0.3.3)
   - Disk (0.3.3)
   - Nimble (7.0.3)
@@ -13,7 +13,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  CodablePersistenceStore: 0f156b4e08209546dad9a440f80bcb74807c01f0
+  CodablePersistenceStore: dafd8221e95b55708cba7883e4832987e37e94ef
   Disk: d1f55cd61f6ca20f368232d0c6e37e3c3dfcb63e
   Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
 

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E70ADB16080EFBA00603CAC /* Pods_CodablePersistenceStoreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6622EDA396FE1EE6F170D22E /* Pods_CodablePersistenceStoreTests.framework */; };
+		56351F4B5FAE2908DAB6283C /* Pods_CodablePersistenceStore_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 744BFF50690BADF40C3911E9 /* Pods_CodablePersistenceStore_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -15,8 +17,6 @@
 		6B7600111FED3704008CA736 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7600101FED3704008CA736 /* User.swift */; };
 		6B8F23D51FBED8D500050453 /* CodablePersistenceStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE0B4811FBEC92C00C0AE35 /* CodablePersistenceStoreTests.swift */; };
 		6BE0B48A1FBEC95500C0AE35 /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE0B4891FBEC95500C0AE35 /* Messages.swift */; };
-		DABA7516AE2266D4E752CED6 /* Pods_CodablePersistenceStoreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40DA9BEE2038C5D792492F6E /* Pods_CodablePersistenceStoreTests.framework */; };
-		F986E52AC760B6BF006A475B /* Pods_CodablePersistenceStore_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E03A48CC2F4F4F31088A0D3 /* Pods_CodablePersistenceStore_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,11 +30,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0E03A48CC2F4F4F31088A0D3 /* Pods_CodablePersistenceStore_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CodablePersistenceStore_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		260F7F5EF06196F58C7FC055 /* CodablePersistenceStore.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = CodablePersistenceStore.podspec; path = ../CodablePersistenceStore.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		2823AF61C166C8EB7271D0B8 /* Pods-CodablePersistenceStoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodablePersistenceStoreTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CodablePersistenceStoreTests/Pods-CodablePersistenceStoreTests.debug.xcconfig"; sourceTree = "<group>"; };
+		28FF4F8D1E538F45C60BE19F /* Pods-CodablePersistenceStoreTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodablePersistenceStoreTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CodablePersistenceStoreTests/Pods-CodablePersistenceStoreTests.release.xcconfig"; sourceTree = "<group>"; };
+		298378C04811DFDC0FE79C53 /* Pods-CodablePersistenceStoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodablePersistenceStoreTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CodablePersistenceStoreTests/Pods-CodablePersistenceStoreTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2F15CA04009092AAAE8D2A8F /* Pods-CodablePersistenceStore_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodablePersistenceStore_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CodablePersistenceStore_Example/Pods-CodablePersistenceStore_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		3BC586B348E02456E03FF483 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		40DA9BEE2038C5D792492F6E /* Pods_CodablePersistenceStoreTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CodablePersistenceStoreTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* CodablePersistenceStore_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodablePersistenceStore_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +42,8 @@
 		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		64AD74AAF15F4BCA0D0DFEE3 /* Pods-CodablePersistenceStore_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodablePersistenceStore_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-CodablePersistenceStore_Example/Pods-CodablePersistenceStore_Example.release.xcconfig"; sourceTree = "<group>"; };
+		6622EDA396FE1EE6F170D22E /* Pods_CodablePersistenceStoreTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CodablePersistenceStoreTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B7600101FED3704008CA736 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		6B8F23D01FBED6CB00050453 /* CodablePersistenceStore */ = {isa = PBXFileReference; lastKnownFileType = folder; name = CodablePersistenceStore; path = ../CodablePersistenceStore; sourceTree = "<group>"; };
 		6B8F23D31FBED70800050453 /* Disk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Disk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,10 +52,8 @@
 		6BE0B4811FBEC92C00C0AE35 /* CodablePersistenceStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodablePersistenceStoreTests.swift; sourceTree = "<group>"; };
 		6BE0B4831FBEC92C00C0AE35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6BE0B4891FBEC95500C0AE35 /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
+		744BFF50690BADF40C3911E9 /* Pods_CodablePersistenceStore_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CodablePersistenceStore_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DB79B311CD0AFF73210A03E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		CFF2EAF5F9FF1224AD2C064C /* Pods-CodablePersistenceStore_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodablePersistenceStore_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-CodablePersistenceStore_Example/Pods-CodablePersistenceStore_Example.release.xcconfig"; sourceTree = "<group>"; };
-		D7F68C5DC8399A869824D3B3 /* Pods-CodablePersistenceStore_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodablePersistenceStore_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CodablePersistenceStore_Example/Pods-CodablePersistenceStore_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		DA69A55AB96C025A09F51C91 /* Pods-CodablePersistenceStoreTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodablePersistenceStoreTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CodablePersistenceStoreTests/Pods-CodablePersistenceStoreTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F986E52AC760B6BF006A475B /* Pods_CodablePersistenceStore_Example.framework in Frameworks */,
+				56351F4B5FAE2908DAB6283C /* Pods_CodablePersistenceStore_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,7 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DABA7516AE2266D4E752CED6 /* Pods_CodablePersistenceStoreTests.framework in Frameworks */,
+				0E70ADB16080EFBA00603CAC /* Pods_CodablePersistenceStoreTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,10 +82,21 @@
 				6B9B4EAB1FEA715200675E59 /* Nimble.framework */,
 				6B8F23D31FBED70800050453 /* Disk.framework */,
 				6B8F23D01FBED6CB00050453 /* CodablePersistenceStore */,
-				40DA9BEE2038C5D792492F6E /* Pods_CodablePersistenceStoreTests.framework */,
-				0E03A48CC2F4F4F31088A0D3 /* Pods_CodablePersistenceStore_Example.framework */,
+				6622EDA396FE1EE6F170D22E /* Pods_CodablePersistenceStoreTests.framework */,
+				744BFF50690BADF40C3911E9 /* Pods_CodablePersistenceStore_Example.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		52FC570507F25F770969C0B4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				298378C04811DFDC0FE79C53 /* Pods-CodablePersistenceStoreTests.debug.xcconfig */,
+				28FF4F8D1E538F45C60BE19F /* Pods-CodablePersistenceStoreTests.release.xcconfig */,
+				2F15CA04009092AAAE8D2A8F /* Pods-CodablePersistenceStore_Example.debug.xcconfig */,
+				64AD74AAF15F4BCA0D0DFEE3 /* Pods-CodablePersistenceStore_Example.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		607FACC71AFB9204008FA782 = {
@@ -96,7 +107,7 @@
 				6BE0B4801FBEC92C00C0AE35 /* CodablePersistenceStoreTests */,
 				607FACD11AFB9204008FA782 /* Products */,
 				341215136F6AE3F03DC50DE4 /* Frameworks */,
-				C11289DD709654065DEDE5AB /* Pods */,
+				52FC570507F25F770969C0B4 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -152,17 +163,6 @@
 			path = CodablePersistenceStoreTests;
 			sourceTree = "<group>";
 		};
-		C11289DD709654065DEDE5AB /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				2823AF61C166C8EB7271D0B8 /* Pods-CodablePersistenceStoreTests.debug.xcconfig */,
-				DA69A55AB96C025A09F51C91 /* Pods-CodablePersistenceStoreTests.release.xcconfig */,
-				D7F68C5DC8399A869824D3B3 /* Pods-CodablePersistenceStore_Example.debug.xcconfig */,
-				CFF2EAF5F9FF1224AD2C064C /* Pods-CodablePersistenceStore_Example.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -170,12 +170,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "CodablePersistenceStore_Example" */;
 			buildPhases = (
-				4CD436560FEBF99BD685EC3F /* [CP] Check Pods Manifest.lock */,
+				73F8BA83AF78B6636717C5CD /* [CP] Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				AA0B7A095ABC88DB264E348C /* [CP] Embed Pods Frameworks */,
-				CCA248645515BE05D9117CB4 /* [CP] Copy Pods Resources */,
+				071B28A117504815A6056532 /* [CP] Embed Pods Frameworks */,
+				C96335AB67E7664321382488 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -190,12 +190,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6BE0B4841FBEC92C00C0AE35 /* Build configuration list for PBXNativeTarget "CodablePersistenceStoreTests" */;
 			buildPhases = (
-				7C38AE8E20B4311BA95CFD36 /* [CP] Check Pods Manifest.lock */,
+				B13B8752C941A8D946D021AC /* [CP] Check Pods Manifest.lock */,
 				6BE0B47B1FBEC92C00C0AE35 /* Sources */,
 				6BE0B47C1FBEC92C00C0AE35 /* Frameworks */,
 				6BE0B47D1FBEC92C00C0AE35 /* Resources */,
-				1E5F650F8A1B4265DF90A0E4 /* [CP] Embed Pods Frameworks */,
-				EDA5D8B1667A54CCE0B9D86B /* [CP] Copy Pods Resources */,
+				47C0A6BF23F3A2DB921864B1 /* [CP] Embed Pods Frameworks */,
+				39A97050ABC844EB788CE1D8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -267,7 +267,42 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1E5F650F8A1B4265DF90A0E4 /* [CP] Embed Pods Frameworks */ = {
+		071B28A117504815A6056532 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CodablePersistenceStore_Example/Pods-CodablePersistenceStore_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CodablePersistenceStore/CodablePersistenceStore.framework",
+				"${BUILT_PRODUCTS_DIR}/Disk/Disk.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CodablePersistenceStore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Disk.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CodablePersistenceStore_Example/Pods-CodablePersistenceStore_Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		39A97050ABC844EB788CE1D8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CodablePersistenceStoreTests/Pods-CodablePersistenceStoreTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		47C0A6BF23F3A2DB921864B1 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -289,7 +324,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CodablePersistenceStoreTests/Pods-CodablePersistenceStoreTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4CD436560FEBF99BD685EC3F /* [CP] Check Pods Manifest.lock */ = {
+		73F8BA83AF78B6636717C5CD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -307,7 +342,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7C38AE8E20B4311BA95CFD36 /* [CP] Check Pods Manifest.lock */ = {
+		B13B8752C941A8D946D021AC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -325,27 +360,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AA0B7A095ABC88DB264E348C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-CodablePersistenceStore_Example/Pods-CodablePersistenceStore_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/CodablePersistenceStore/CodablePersistenceStore.framework",
-				"${BUILT_PRODUCTS_DIR}/Disk/Disk.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CodablePersistenceStore.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Disk.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CodablePersistenceStore_Example/Pods-CodablePersistenceStore_Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CCA248645515BE05D9117CB4 /* [CP] Copy Pods Resources */ = {
+		C96335AB67E7664321382488 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -358,21 +373,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CodablePersistenceStore_Example/Pods-CodablePersistenceStore_Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EDA5D8B1667A54CCE0B9D86B /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CodablePersistenceStoreTests/Pods-CodablePersistenceStoreTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -528,7 +528,7 @@
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D7F68C5DC8399A869824D3B3 /* Pods-CodablePersistenceStore_Example.debug.xcconfig */;
+			baseConfigurationReference = 2F15CA04009092AAAE8D2A8F /* Pods-CodablePersistenceStore_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9U342BS86F;
@@ -544,7 +544,7 @@
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CFF2EAF5F9FF1224AD2C064C /* Pods-CodablePersistenceStore_Example.release.xcconfig */;
+			baseConfigurationReference = 64AD74AAF15F4BCA0D0DFEE3 /* Pods-CodablePersistenceStore_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9U342BS86F;
@@ -560,7 +560,7 @@
 		};
 		6BE0B4851FBEC92C00C0AE35 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2823AF61C166C8EB7271D0B8 /* Pods-CodablePersistenceStoreTests.debug.xcconfig */;
+			baseConfigurationReference = 298378C04811DFDC0FE79C53 /* Pods-CodablePersistenceStoreTests.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -585,7 +585,7 @@
 		};
 		6BE0B4861FBEC92C00C0AE35 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DA69A55AB96C025A09F51C91 /* Pods-CodablePersistenceStoreTests.release.xcconfig */;
+			baseConfigurationReference = 28FF4F8D1E538F45C60BE19F /* Pods-CodablePersistenceStoreTests.release.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;

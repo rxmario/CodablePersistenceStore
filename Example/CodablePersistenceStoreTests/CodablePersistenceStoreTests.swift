@@ -161,10 +161,10 @@ class CodablePersistenceStoreTests: XCTestCase {
         expect { try self.persistenceStore.persist(expectedMessage2) }.toNot(throwError())
 
         expect { try self.persistenceStore.getAll(Message.self, completion: { (messages) in
-            
-            expect(expectedMessage0).to(equal(messages[0]))
-            expect(expectedMessage1).to(equal(messages[1]))
-            expect(expectedMessage2).to(equal(messages[2]))
+
+            expect(expectedMessage0).to(equal(messages[1]))
+            expect(expectedMessage1).to(equal(messages[2]))
+            expect(expectedMessage2).to(equal(messages[0]))
             
             expect(messages[0]).to(beAKindOf(Message.self))
             expect(messages[1]).to(beAKindOf(Message.self))
@@ -198,9 +198,9 @@ class CodablePersistenceStoreTests: XCTestCase {
         do {
             let messagez = try self.persistenceStore.getAll(Message.self)
             
-            expect(messagez[0]).to(equal(expectedMessage0))
-            expect(messagez[1]).to(equal(expectedMessage1))
-            expect(messagez[2]).to(equal(expectedMessage2))
+            expect(messagez[1]).to(equal(expectedMessage0))
+            expect(messagez[2]).to(equal(expectedMessage1))
+            expect(messagez[0]).to(equal(expectedMessage2))
             
             exp1.fulfill()
         } catch let error as NSError {
@@ -454,13 +454,34 @@ class CodablePersistenceStoreTests: XCTestCase {
     func testCreatePathWithId() {
         
         let path = self.persistenceStore.createPathFrom(type: Message.self, id: "yo")
-        expect(path).to(equal("xmari0/message/yo.json"))
+        
+        let utf8root = "xmari0".data(using: .utf8)
+        let base64root = utf8root?.base64EncodedString()
+        
+        let utf8path = "message".data(using: .utf8)
+        let base64path = utf8path?.base64EncodedString()
+        
+        let utf8id = "yo.json".data(using: .utf8)
+        let base64id = utf8id?.base64EncodedString()
+        
+        let expectedPath: String = "\(base64root!)/\(base64path!)/\(base64id!)"
+        
+        expect(expectedPath).to(equal(path))
         
     }
     
     func testCreatePathWithoutId() {
         let path = self.persistenceStore.createPathFrom(type: Message.self, id: nil)
-        expect(path).to(equal("xmari0/message"))
+        
+        let utf8root = "xmari0".data(using: .utf8)
+        let base64root = utf8root?.base64EncodedString()
+        
+        let utf8path = "message".data(using: .utf8)
+        let base64path = utf8path?.base64EncodedString()
+        
+        let expectedPath: String = "\(base64root!)/\(base64path!)"
+        
+        expect(expectedPath).to(equal(path))
     }
     
 }

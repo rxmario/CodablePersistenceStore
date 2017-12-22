@@ -195,6 +195,8 @@ open class CodablePersistenceStore: CodablePersistenceStoreProtocol {
         let finalPath = self.createPathFrom(type: type, id: nil)
         let jsonDecoder = JSONDecoder()
 
+        print("FINALPATH: \(finalPath)")
+        
         var _decodedJSON: [T] = [T]()
         
         do {
@@ -228,6 +230,7 @@ open class CodablePersistenceStore: CodablePersistenceStoreProtocol {
             
             for item in storedData {
                 let obj = try! jsonDecoder.decode(T.self, from: item)
+                print(obj.identifier())
                 _decodedJSON.append(obj)
             }
             completion(_decodedJSON)
@@ -331,10 +334,23 @@ open class CodablePersistenceStore: CodablePersistenceStoreProtocol {
     }
     
     internal func createPathFrom<T>(type: T.Type, id: String?) -> String where T : PersistableType {
+        
         let pathName: String = String(describing: type).lowercased()
-        let id = id == nil ? "" : "/\(id!).json"
-        let filePath: String = "\(self.rootName ?? "xmari0")/\(pathName)\(id)"
-        return filePath
+        let slash = id == nil ? "" : "/"
+        let id = id == nil ? "" : "\(id!).json"
+        let rootName = self.rootName == nil ? "xmari0" : self.rootName
+        
+        let utf8root = rootName?.data(using: .utf8)
+        let utf8id = id.data(using: .utf8)
+        let utf8path = pathName.data(using: .utf8)
+        
+        let base64root = utf8root?.base64EncodedString()
+        let base64id = utf8id?.base64EncodedString()
+        let base64path = utf8path?.base64EncodedString()
+        
+        let base64filePath: String = "\(base64root!)/\(base64path!)\(slash)\(base64id!)"
+        
+        return base64filePath
     }
 }
 
