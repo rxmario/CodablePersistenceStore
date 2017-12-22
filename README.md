@@ -166,10 +166,12 @@ let isAlreadyInStore = self.persistenceStore.exists(message1)
 Asynchronous:
 
 ```swift
+
 self.persistenceStore.exists(message1, completion: { (bool) in 
 	guard bool == false else { return }
 		// do stuff afterwards
 })
+
 ```
 
 More options:
@@ -177,8 +179,8 @@ More options:
 ```swift
 
 let isAlreadyInStore = self.persistenceStore.exists("10", type: Message.self)
+``` 
 
-```   
    Or Async: 
 
 ```swift
