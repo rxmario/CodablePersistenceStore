@@ -175,7 +175,9 @@ self.persistenceStore.exists(message1, completion: { (bool) in
 More options:
 
 ```swift
+
 let isAlreadyInStore = self.persistenceStore.exists("10", type: Message.self)
+
 ```   
    Or Async: 
 
