@@ -1,25 +1,73 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="CodablePersistenceStore_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F4j-u2-MfW">
+                                <rect key="frame" x="83" y="318" width="208" height="30"/>
+                                <state key="normal" title="Tap me and run the app again."/>
+                                <connections>
+                                    <action selector="persistButtonTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="V53-sG-dHW"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ij2-Cz-RD9">
+                                <rect key="frame" x="16" y="66" width="343" height="62"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="62" id="sbD-fg-o8l"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ki-TZ-ddb">
+                                <rect key="frame" x="16" y="141" width="343" height="62"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="62" id="uQI-BD-bsX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="9ki-TZ-ddb" firstAttribute="top" secondItem="ij2-Cz-RD9" secondAttribute="bottom" constant="13" id="1qZ-QX-qiq"/>
+                            <constraint firstItem="9ki-TZ-ddb" firstAttribute="leading" secondItem="ij2-Cz-RD9" secondAttribute="leading" id="5qT-os-P3M"/>
+                            <constraint firstItem="9ki-TZ-ddb" firstAttribute="trailing" secondItem="ij2-Cz-RD9" secondAttribute="trailing" id="IeW-zi-Za8"/>
+                            <constraint firstItem="F4j-u2-MfW" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="a2S-mw-2bz"/>
+                            <constraint firstItem="F4j-u2-MfW" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="cNY-ER-mio"/>
+                            <constraint firstItem="ij2-Cz-RD9" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="f5N-DK-4GH"/>
+                            <constraint firstItem="ij2-Cz-RD9" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="46" id="rTf-mV-Kc6"/>
+                            <constraint firstItem="ij2-Cz-RD9" firstAttribute="centerX" secondItem="F4j-u2-MfW" secondAttribute="centerX" id="ym7-hK-Rre"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="persistButton" destination="F4j-u2-MfW" id="nVA-ts-pKF"/>
+                        <outlet property="userOneLabel" destination="ij2-Cz-RD9" id="TR7-QD-SCs"/>
+                        <outlet property="userTwoLabel" destination="9ki-TZ-ddb" id="a5C-Ss-d0z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="30.134932533733135"/>
         </scene>
     </scenes>
 </document>

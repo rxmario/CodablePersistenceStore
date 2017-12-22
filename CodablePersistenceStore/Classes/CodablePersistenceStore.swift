@@ -12,6 +12,7 @@ public typealias PersistableType = CanBePersistedProtocol
 
 open class CodablePersistenceStore: CodablePersistenceStoreProtocol {
 
+    /// The name of the rootfolder on the device.
     var rootName: String?
     
     /// Creates a default root folder.
@@ -49,7 +50,6 @@ open class CodablePersistenceStore: CodablePersistenceStoreProtocol {
         
         let id = item.identifier()
         let filePath = self.createPathFrom(type: T.self, id: id)
-        print(filePath)
         
         do {
             try Disk.save(item, to: .applicationSupport, as: filePath)

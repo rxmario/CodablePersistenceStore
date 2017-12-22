@@ -311,6 +311,8 @@ class CodablePersistenceStoreTests: XCTestCase {
         
         let item = messages[0]
         
+        expect { try self.persistenceStore.persist(item) }.toNot(throwError())
+        
         XCTAssertNoThrow(try self.persistenceStore.persist(item))
         
         let isThere = self.persistenceStore.exists(item)
@@ -322,24 +324,19 @@ class CodablePersistenceStoreTests: XCTestCase {
     func testExistsWithItemAndCompletion() {
         
         let item = messages[0]
-        let exp = expectation(description: "Item is in store.")
         
-        XCTAssertNoThrow(try self.persistenceStore.persist(item))
+        expect { try self.persistenceStore.persist(item) }.toNot(throwError())
         
-        self.persistenceStore.exists(item) { (isThere) in
+        self.persistenceStore.exists(item, completion: { (isThere) in
             expect(isThere).to(beTrue())
-            exp.fulfill()
-        }
-        
-        waitForExpectations(timeout: 5, handler: nil)
-        
+        })
     }
     
     func testExistsWithIdentifierAndType() {
         
         let item = messages[0]
         
-        XCTAssertNoThrow(try self.persistenceStore.persist(item))
+        expect { try self.persistenceStore.persist(item) }.toNot(throwError())
         
         let isThere = self.persistenceStore.exists("1", type: Message.self)
         
@@ -353,6 +350,8 @@ class CodablePersistenceStoreTests: XCTestCase {
         let exp = expectation(description: "Item is in store.")
         
         XCTAssertNoThrow(try self.persistenceStore.persist(item))
+        
+        expect { try self.persistenceStore.persist(item) }.toNot(throwError())
         
         self.persistenceStore.exists("1", type: Message.self) { (isThere) in
             expect(isThere).to(beTrue())
@@ -372,8 +371,8 @@ class CodablePersistenceStoreTests: XCTestCase {
         let firstItem = Message(id: "10", title: "yo", body: "yo")
         let secondItem = Message(id: "11", title: "yoyo", body: "yoyoyo")
         
-        XCTAssertNoThrow(try self.persistenceStore.persist(firstItem))
-        XCTAssertNoThrow(try self.persistenceStore.persist(secondItem))
+        expect { try self.persistenceStore.persist(firstItem) }.toNot(throwError())
+        expect { try self.persistenceStore.persist(secondItem) }.toNot(throwError())
         
         do {
             let itemWithId10 = try self.persistenceStore.filter(Message.self, includeElement: { (item: Message) -> Bool in
@@ -389,9 +388,9 @@ class CodablePersistenceStoreTests: XCTestCase {
         
         let firstItem = Message(id: "10", title: "yo", body: "yo")
         let secondItem = Message(id: "11", title: "yoyo", body: "yoyoyo")
-                
-        XCTAssertNoThrow(try self.persistenceStore.persist(firstItem))
-        XCTAssertNoThrow(try self.persistenceStore.persist(secondItem))
+        
+        expect { try self.persistenceStore.persist(firstItem) }.toNot(throwError())
+        expect { try self.persistenceStore.persist(secondItem) }.toNot(throwError())
         
         do {
             try self.persistenceStore.filter(Message.self, includeElement: { (item: Message) -> Bool in
