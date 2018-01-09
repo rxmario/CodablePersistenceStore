@@ -322,6 +322,27 @@ open class CodablePersistenceStore: CodablePersistenceStoreProtocol {
         completion(bool)
     }
     
+    /// Use this method to check synchronous if a collection of a special type already exists in the store.
+    ///
+    /// - Parameter type: The type you'd like to check.
+    /// - Returns: Boolean
+    public func exists<T>(_ type: T.Type) -> Bool where T : CanBePersistedProtocol {
+        let filePath = self.createPathFrom(type: type, id: nil)
+        let bool = Disk.exists(filePath, in: .applicationSupport)
+        return bool
+    }
+    
+    /// Use this method to check asynchronous if a collection of a special type already exists in the store.
+    ///
+    /// - Parameters:
+    ///   - type: The type you'd like to check.
+    ///   - completion: Boolean
+    public func exists<T>(_ type: T.Type, completion: @escaping (Bool) -> Void) where T : CanBePersistedProtocol {
+        let filePath = self.createPathFrom(type: type, id: nil)
+        let bool = Disk.exists(filePath, in: .applicationSupport)
+        completion(bool)
+    }
+    
     /// Use this method to clear the whole cache.
     ///
     /// - Throws: An Error containing the localized description, localized failure reason and localized suggestions.

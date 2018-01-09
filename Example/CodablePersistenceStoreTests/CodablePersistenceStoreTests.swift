@@ -362,6 +362,36 @@ class CodablePersistenceStoreTests: XCTestCase {
         
     }
     
+    func testSynchronousIfFolderExists() {
+        let item0 = messages[0]
+        let item1 = messages[1]
+        let item2 = messages[2]
+        
+        expect { try self.persistenceStore.persist(item0) }.toNot(throwError())
+        expect {  try self.persistenceStore.persist(item1) }.toNot(throwError())
+        expect { try self.persistenceStore.persist(item2) }.toNot(throwError())
+        
+        let isThere = self.persistenceStore.exists(Message.self)
+        expect(isThere).to(beTrue())
+        
+        
+    }
+    
+    func testAsynchronousIfFolderExists() {
+        
+        let item0 = messages[0]
+        let item1 = messages[1]
+        let item2 = messages[2]
+        
+        expect { try self.persistenceStore.persist(item0) }.toNot(throwError())
+        expect {  try self.persistenceStore.persist(item1) }.toNot(throwError())
+        expect { try self.persistenceStore.persist(item2) }.toNot(throwError())
+        
+        self.persistenceStore.exists(Message.self) { (isThere) in
+            expect(isThere).to(beTrue())
+        }
+    }
+    
     // =============================================================================//
     //                             FILTER TESTS                                     //
     // =============================================================================//
