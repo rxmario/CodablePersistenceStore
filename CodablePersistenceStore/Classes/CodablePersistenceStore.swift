@@ -25,6 +25,18 @@ open class CodablePersistenceStore: CodablePersistenceStoreProtocol {
         self.rootName = rootName
     }
     
+    public convenience init(rootName: String? = "xmari0", version: Int = 0, changeVersionHandler:@escaping ((Int, Int) -> Void) ){
+        self.init(rootName: rootName)
+        
+        let dbVersionKey = "CodablePersistenceStoreVersion"
+        
+        let oldVersion = UserDefaults.standard.integer(forKey: dbVersionKey)
+            
+        if oldVersion != version {
+            changeVersionHandler(version, oldVersion)
+        }
+    }
+    
     /// Use this method to check if the provided object is persistable.
     ///
     /// - Parameter object: Any Object you'd like to check.
@@ -194,8 +206,6 @@ open class CodablePersistenceStore: CodablePersistenceStoreProtocol {
         
         let finalPath = self.createPathFrom(type: type, id: nil)
         let jsonDecoder = JSONDecoder()
-
-        print("FINALPATH: \(finalPath)")
         
         var _decodedJSON: [T] = [T]()
         
