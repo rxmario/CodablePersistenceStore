@@ -20,5 +20,15 @@
     "Disk": [
       "~> 0.3.3"
     ]
-  }
+  },
+  "subspecs": [
+    {
+      "name": "JB",
+      "dependencies": {
+        "JBPersistenceStore-Protocols": [
+
+        ]
+      }
+    }
+  ]
 }
