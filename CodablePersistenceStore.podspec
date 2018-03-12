@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'CodablePersistenceStore'
-  s.version          = '2.0.2'
+  s.version          = '2.0.3'
   s.summary          = 'A Disk wrapper which makes your live easier while working with the new Codable Type.'
   s.homepage         = 'https://github.com/xmari0/CodablePersistenceStore'
   s.license          = 'MIT'
