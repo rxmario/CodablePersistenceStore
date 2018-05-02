@@ -9,9 +9,11 @@ import Foundation
 import Disk
 
 public typealias PersistableType = CanBePersistedProtocol
+public typealias NewVersion = Int
+public typealias OldVersion = Int
 
 open class CodablePersistenceStore: CodablePersistenceStoreProtocol {
-
+    
     /// The name of the rootfolder on the device.
     var rootName: String?
     
@@ -25,15 +27,25 @@ open class CodablePersistenceStore: CodablePersistenceStoreProtocol {
         self.rootName = rootName
     }
     
-    public convenience init(rootName: String? = "xmari0", version: Int = 0, changeVersionHandler:@escaping ((Int, Int) -> Void) ){
+    /// Use this constructor in order to be able to flush the store when the version changes.
+    /// You might want to flush the persisted data to prevent crashes when models change.
+    ///
+    /// - Parameters:
+    ///   - rootName: The name of the root folder.
+    ///   - version: the version of the store
+    ///   - changeVersionHandler: A closure containing the store, the new version and the old version.
+    public convenience init(rootName: String? = "xmari0", version: Int = 0, changeVersionHandler:@escaping ((CodablePersistenceStore, NewVersion, OldVersion) -> Void) ){
         self.init(rootName: rootName)
         
         let dbVersionKey = "CodablePersistenceStoreVersion"
         
         let oldVersion = UserDefaults.standard.integer(forKey: dbVersionKey)
-            
+        
         if oldVersion != version {
-            changeVersionHandler(version, oldVersion)
+            
+            UserDefaults.standard.set(version, forKey: dbVersionKey)
+            
+            changeVersionHandler(self, version, oldVersion)
         }
     }
     
@@ -100,7 +112,7 @@ open class CodablePersistenceStore: CodablePersistenceStoreProtocol {
         do {
             try Disk.remove(filePath, from: .applicationSupport)
         } catch let error as NSError {
-           throw CodablePersistenceStoreErrors.CouldntFindItemForId(id: id, error: error)
+            throw CodablePersistenceStoreErrors.CouldntFindItemForId(id: id, error: error)
         }
     }
     
@@ -159,6 +171,30 @@ open class CodablePersistenceStore: CodablePersistenceStoreProtocol {
         }
     }
     
+    public func update<T>(newItem: T!) throws where T : PersistableType {
+        
+        let filePath = self.createPathFrom(type: T.self, id: newItem.identifier())
+        
+        do {
+            try Disk.save(newItem, to: .applicationSupport, as: filePath)
+        } catch let error as NSError {
+            throw CodablePersistenceStoreErrors.CannotFindItemsFor(type: T.self, error: error)
+        }
+    }
+    
+    public func update<T>(newItem: T!, completion: @escaping () -> ()) throws where T : CanBePersistedProtocol {
+        
+        let filePath = self.createPathFrom(type: T.self, id: newItem.identifier())
+        
+        do {
+            try Disk.save(newItem, to: .applicationSupport, as: filePath)
+            completion()
+        } catch let error as NSError {
+            throw CodablePersistenceStoreErrors.CannotFindItemsFor(type: T.self, error: error)
+        }
+        
+    }
+    
     /// Use this method to retrieve an item by its identifier.
     ///
     /// - Parameters:
@@ -174,7 +210,7 @@ open class CodablePersistenceStore: CodablePersistenceStoreProtocol {
             let unarchivedData = try Disk.retrieve(finalPath, from: .applicationSupport, as: type.self)
             return unarchivedData
         } catch let error as NSError {
-           throw CodablePersistenceStoreErrors.CouldntFindItemForId(id: identifier, error: error)
+            throw CodablePersistenceStoreErrors.CouldntFindItemForId(id: identifier, error: error)
         }
     }
     
@@ -360,28 +396,27 @@ open class CodablePersistenceStore: CodablePersistenceStoreProtocol {
         do {
             try Disk.clear(.applicationSupport)
         } catch let error as NSError {
-           throw CodablePersistenceStoreErrors.CouldntClearCache(error: error)
+            throw CodablePersistenceStoreErrors.CouldntClearCache(error: error)
         }
     }
     
     internal func createPathFrom<T>(type: T.Type, id: String?) -> String where T : PersistableType {
         
         let pathName: String = String(describing: type).lowercased()
-        let slash = id == nil ? "" : "/"
-        let id = id == nil ? "" : "\(id!).json"
-        let rootName = self.rootName == nil ? "xmari0" : self.rootName
+        let slash: String = id == nil ? "" : "/"
+        let id: String = id == nil ? "" : "\(id!).json"
+        let rootName: String? = self.rootName == nil ? "xmari0" : self.rootName
         
-        let utf8root = rootName?.data(using: .utf8)
-        let utf8id = id.data(using: .utf8)
-        let utf8path = pathName.data(using: .utf8)
+        let utf8root: Data? = rootName?.data(using: .utf8)
+        let utf8id: Data? = id.data(using: .utf8)
+        let utf8path: Data? = pathName.data(using: .utf8)
         
-        let base64root = utf8root?.base64EncodedString()
-        let base64id = utf8id?.base64EncodedString()
-        let base64path = utf8path?.base64EncodedString()
+        let base64root: String? = utf8root?.base64EncodedString()
+        let base64id: String? = utf8id?.base64EncodedString()
+        let base64path: String? = utf8path?.base64EncodedString()
         
         let base64filePath: String = "\(base64root!)/\(base64path!)\(slash)\(base64id!)"
         
         return base64filePath
     }
 }
-

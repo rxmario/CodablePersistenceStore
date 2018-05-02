@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'CodablePersistenceStore'
-  s.version          = '2.0.3'
+  s.version          = '2.1.4'
   s.summary          = 'A Disk wrapper which makes your live easier while working with the new Codable Type.'
   s.homepage         = 'https://github.com/xmari0/CodablePersistenceStore'
   s.license          = 'MIT'
@@ -15,13 +15,6 @@ Pod::Spec.new do |s|
   
   s.subspec 'Standard' do |standard|
       standard.source_files = 'CodablePersistenceStore/Classes/**/*'
-  end
-  
-
-  s.subspec 'JB' do |jb|
-    jb.source_files = 'JBPersistenceStore-Protocols/Classes/*.swift'
-    jb.dependency "JBPersistenceStore-Protocols", "~> 2.1.1"
-    
   end
   
 end

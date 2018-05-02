@@ -10,7 +10,7 @@ import UIKit
 import CodablePersistenceStore
 
 class ViewController: UIViewController {
-
+    
     // @IBOutlets
     @IBOutlet weak var userOneLabel: UILabel!
     
@@ -22,16 +22,25 @@ class ViewController: UIViewController {
         persist()
     }
     
+    let store = CodablePersistenceStore(rootName: "xmari0", version: 4) { (currentStore, newVersion, oldVersion) in
+        
+        print("Version changed from version: \(oldVersion) to version: \(newVersion)")
+        try! currentStore.cacheClear()
+        
+    }
     
-    let store = CodablePersistenceStore(rootName: "ExampleApp")
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         getPersistedUsers()
-  
+        updateExample()
+        
+        
+        
     }
-
+    
     func persist() {
         
         let user0 = User(id: "1", firstName: "Mario", lastName: "Zimmermann")
@@ -69,5 +78,31 @@ class ViewController: UIViewController {
             return
         }
     }
+    
+    func updateExample() {
+        
+        var news = News(id: "001", title: "Hey", content: "Hello World", isRead: false)
+        
+        try! self.store.persist(news)
+        
+        let storedNews = try! self.store.getAll(News.self)
+        
+        print(storedNews[0])
+        
+        print("Starting update")
+        
+        news.isRead = true
+        
+        try! self.store.update(newItem: news)
+        
+        let updatedNews = try! self.store.getAll(News.self)
+        
+        print(updatedNews[0])
+        
+        print(updatedNews)
+        
+    }
 }
+
+
 

@@ -7,11 +7,11 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 target 'CodablePersistenceStore_Example' do
     use_frameworks!
-    pod 'CodablePersistenceStore/'
+    pod 'CodablePersistenceStore'
     
   target 'CodablePersistenceStoreTests' do
       pod 'Nimble', '~> 7.0.3'
-      pod 'CodablePersistenceStore/'
+      pod 'CodablePersistenceStore'
     inherit! :search_paths
 
     

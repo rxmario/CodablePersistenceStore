@@ -9,7 +9,7 @@
 import Foundation
 import CodablePersistenceStore
 
-struct User: PersistableType {
+struct User: CanBePersistedProtocol {
     
     var id: String
     var firstName: String
@@ -25,4 +25,25 @@ struct User: PersistableType {
         return self.id
     }
     
+}
+
+struct News: CanBePersistedProtocol {
+    var id: String
+    var title: String
+    var content: String
+    var isRead: Bool
+    
+    init(id: String,
+         title: String,
+         content: String,
+         isRead: Bool = false) {
+        self.id = id
+        self.title = title
+        self.content = content
+        self.isRead = isRead
+    }
+    
+    func identifier() -> String {
+        return self.id
+    }
 }
