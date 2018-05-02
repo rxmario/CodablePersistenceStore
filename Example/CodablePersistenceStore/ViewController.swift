@@ -93,7 +93,7 @@ class ViewController: UIViewController {
         
         news.isRead = true
         
-        try! self.store.update(newItem: news)
+        try! self.store.update(news)
         
         let updatedNews = try! self.store.getAll(News.self)
         

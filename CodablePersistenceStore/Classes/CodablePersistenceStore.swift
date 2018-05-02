@@ -152,7 +152,7 @@ open class CodablePersistenceStore: CodablePersistenceStoreProtocol {
         }
     }
     
-    /// Use this method to delete an item.
+    /// Use this method to delete an item asynchronously.
     ///
     /// - Parameters:
     ///   - identifier: The identifier of your item.
@@ -171,7 +171,11 @@ open class CodablePersistenceStore: CodablePersistenceStoreProtocol {
         }
     }
     
-    public func update<T>(newItem: T!) throws where T : PersistableType {
+    /// Use this method to update an item.
+    ///
+    /// - Parameter newItem: the changed item.
+    /// - Throws: An Error containing the localized description, localized failure reason and localized suggestions.
+    public func update<T>(_ newItem: T!) throws where T : PersistableType {
         
         let filePath = self.createPathFrom(type: T.self, id: newItem.identifier())
         
@@ -182,7 +186,13 @@ open class CodablePersistenceStore: CodablePersistenceStoreProtocol {
         }
     }
     
-    public func update<T>(newItem: T!, completion: @escaping () -> ()) throws where T : CanBePersistedProtocol {
+    /// Use this method to update an item asynchronously
+    ///
+    /// - Parameters:
+    ///   - newItem: the changed item.
+    ///   - completion: Just a closure to do things afterwards.
+    /// - Throws: An Error containing the localized description, localized failure reason and localized suggestions.
+    public func update<T>(_ newItem: T!, completion: @escaping () -> ()) throws where T : CanBePersistedProtocol {
         
         let filePath = self.createPathFrom(type: T.self, id: newItem.identifier())
         
@@ -192,7 +202,6 @@ open class CodablePersistenceStore: CodablePersistenceStoreProtocol {
         } catch let error as NSError {
             throw CodablePersistenceStoreErrors.CannotFindItemsFor(type: T.self, error: error)
         }
-        
     }
     
     /// Use this method to retrieve an item by its identifier.
